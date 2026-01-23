@@ -4,165 +4,144 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contatti – MLC</title>
-<meta name="description" content="Contatta MLC – Matrimoni Low Cost per richiedere informazioni o preventivi personalizzati.">
-<meta name="keywords" content="contatti, wedding planner, matrimoni low cost, Friuli, MLC">
-<meta name="author" content="MLC – Stefania">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background-color: #faf7f4;
+    line-height: 1.6;
+  }
 
-body {
-  font-family: "Poppins", sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-  color: #fff;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
-              url('img/foto-esempio.jpg') no-repeat center center/cover;
-  padding: 100px 20px 40px;
-}
+  header {
+    background: #fff;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    z-index: 10;
+  }
 
-/* Navbar */
-nav { position: fixed; top: 20px; right: 20px; z-index: 9999; }
-.dropbtn {
-  background-color: #6b8e77;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-.dropdown { position: relative; display: inline-block; }
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: #fff;
-  min-width: 160px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  overflow: hidden;
-}
-.dropdown-content a {
-  color: #6b8e77;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-weight: 500;
-}
-.dropdown-content a:hover { background-color: #e3ede6; }
-.dropdown:hover .dropdown-content { display: block; }
-.dropdown:hover .dropbtn { background-color: #58725f; }
+  header h1 {
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 2px;
+  }
 
-/* Contact box */
-.contact-card {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 40px;
-  max-width: 600px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-  animation: fadeIn 1.5s ease;
-}
-@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+  nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+  }
 
-h1 {
-  font-size: 2.5em;
-  color: #fff;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-  margin-bottom: 25px;
-}
-p { font-size: 1.1em; line-height: 1.6; margin-bottom: 15px; }
+  nav a:hover { color: #c39a6b; }
 
-a.button {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #6b8e77;
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-a.button:hover {
-  background: #58725f;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-}
+  .content {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 50px 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+  }
 
-/* Form */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-input, textarea {
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  font-family: "Poppins", sans-serif;
-  font-size: 1em;
-}
-textarea { resize: vertical; min-height: 100px; }
-input[type="submit"] {
-  cursor: pointer;
-  background: #6b8e77;
-  color: white;
-  font-weight: 600;
-  border: none;
-  padding: 12px;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-}
-input[type="submit"]:hover {
-  background: #58725f;
-  transform: translateY(-2px);
-}
+  h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #c39a6b;
+  }
 
-@media (max-width: 600px) {
-  h1 { font-size: 2.2em; }
-  .contact-card { padding: 30px; }
-}
+  p { margin-bottom: 15px; font-size: 1em; color: #555; }
+
+  a.button {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #c39a6b;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  a.button:hover { background: #a67c55; }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  input, textarea {
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 1em;
+    width: 100%;
+  }
+
+  textarea { min-height: 100px; resize: vertical; }
+
+  input[type="submit"] {
+    background: #c39a6b;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  input[type="submit"]:hover {
+    background: #a67c55;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .content { padding: 40px 20px; }
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 28px; }
+  }
 </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="dropdown">
-    <button class="dropbtn">Menu ☰</button>
-    <div class="dropdown-content">
-      <a href="index.html">Home</a>
-      <a href="chi-siamo.html">Chi Siamo</a>
-      <a href="servizi.html">Servizi</a>
-      <a href="contatti.html">Contatti</a>
-    </div>
-  </div>
-</nav>
+<header>
+  <h1>MLC</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="contatti.html">Contatti</a>
+  </nav>
+</header>
 
-<div class="contact-card">
+<div class="content">
   <h1>Contatti</h1>
   <p>Per richiedere informazioni o un preventivo personalizzato, contattami direttamente tramite email o telefono:</p>
-  <p><strong>Email:</strong> <a href="mailto:matrimoniodrive@gmail.com" style="color:#fff; text-decoration:underline;">matrimoniodrive@gmail.com</a></p>
-  <p><strong>Telefono:</strong> <a href="tel:+39 3286627293" style="color:#fff; text-decoration:underline;">+39 3286627293</a></p>
+  <p><strong>Email:</strong> <a href="mailto:matrimoniodrive@gmail.com" style="color:#c39a6b; text-decoration:underline;">matrimoniodrive@gmail.com</a></p>
+  <p><strong>Telefono:</strong> <a href="tel:+393286627293" style="color:#c39a6b; text-decoration:underline;">+39 328 662 7293</a></p>
 
   <p>Oppure utilizza il modulo qui sotto:</p>
 
-  <!-- FORM FUNZIONANTE con FORMSubmit -->
   <form action="https://formsubmit.co/matrimoniodrive@gmail.com" method="POST">
-    <!-- impostazioni form -->
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_subject" value="Nuovo messaggio dal sito MLC">
     <input type="hidden" name="_next" value="https://mlc-italia.github.io/thankyou.html">
 
-    <!-- campi -->
     <input type="text" name="nome" placeholder="Il tuo nome" required>
     <input type="email" name="email" placeholder="La tua email" required>
     <textarea name="messaggio" placeholder="Scrivi il tuo messaggio..." required></textarea>

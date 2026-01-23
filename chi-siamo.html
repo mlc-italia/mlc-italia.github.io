@@ -7,133 +7,113 @@
 <meta name="description" content="Chi siamo – MLC, wedding planner specializzata in matrimoni low cost e pieni di stile in Friuli.">
 <meta name="keywords" content="chi siamo, wedding planner, matrimoni low cost, Friuli, MLC">
 <meta name="author" content="MLC – Stefania">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  font-family:"Poppins",sans-serif;
-  line-height:1.6;
-  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img/foto-esempio.jpg') no-repeat center center/cover;
-  color: #fff;
-}
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background-color: #faf7f4;
+    line-height: 1.6;
+  }
 
-/* --- NAV MENU --- */
-nav { position: fixed; top: 20px; right: 20px; z-index: 9999; }
-.dropbtn {
-  background-color: #6b8e77; color:white; padding:10px 15px; border:none; border-radius:8px;
-  cursor:pointer; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,0.2);
-}
-.dropdown { position: relative; display:inline-block; }
-.dropdown-content {
-  display:none; position:absolute; right:0; background-color:#fff; min-width:160px;
-  box-shadow:0 8px 16px rgba(0,0,0,0.2); border-radius:10px; overflow:hidden;
-}
-.dropdown-content a {
-  color:#6b8e77; padding:12px 16px; text-decoration:none; display:block; font-weight:500;
-}
-.dropdown-content a:hover { background-color:#e3ede6; }
-.dropdown:hover .dropdown-content { display:block; }
-.dropdown:hover .dropbtn { background-color: #58725f; }
+  header {
+    background: #fff;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    z-index: 10;
+  }
 
-/* --- HERO SECTION --- */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.2)), url('img/foto-esempio.jpg') no-repeat center center/cover;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-}
-.hero h1 {
-  font-size: 3em;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-  animation: fadeIn 1.5s ease;
-}
+  header h1 {
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 2px;
+  }
 
-/* --- CONTENT CARD --- */
-section {
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  margin: -60px auto 60px auto;
-  padding: 50px 30px;
-  max-width: 900px;
-  width: 90%;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-  animation: fadeInUp 1.2s ease;
-  text-align: center;
-}
-@keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
-@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+  nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+  }
 
-section h2 {
-  font-size: 1.8em;
-  margin-bottom: 25px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #f7e7d3;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-}
-section p {
-  margin-bottom: 18px;
-  font-size: 1.05em;
-  color: #fff;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-}
+  nav a:hover {
+    color: #c39a6b;
+  }
 
-/* --- CTA BUTTON --- */
-a.button {
-  display:inline-block;
-  padding:12px 25px;
-  background:#7fbf87;
-  color:white;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:500;
-  transition: all 0.3s ease;
-  box-shadow:0 4px 15px rgba(0,0,0,0.3), 0 0 10px rgba(127,191,135,0.3);
-  margin-top:15px;
-}
-a.button:hover {
-  background:#6fa36f;
-  transform:translateY(-3px);
-  box-shadow:0 6px 20px rgba(0,0,0,0.4), 0 0 12px rgba(111,163,111,0.4);
-}
+  section {
+    padding: 80px 60px;
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 2.2em; }
-  section { padding: 35px 20px; margin-top: -40px; }
-}
-@media (max-width: 480px) {
-  .hero { height: 50vh; }
-  .hero h1 { font-size: 1.8em; }
-  section { padding: 25px 15px; margin-top: -30px; }
-}
+  section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #c39a6b;
+  }
+
+  section p {
+    margin-bottom: 18px;
+    font-size: 1.05em;
+    color: #333;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: #c39a6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .btn:hover {
+    background: #a67c55;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+    }
+    section {
+      padding: 50px 30px;
+      margin: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    section {
+      padding: 30px 15px;
+      margin: 15px;
+    }
+  }
 </style>
 </head>
 
 <body>
-<nav>
-  <div class="dropdown">
-    <button class="dropbtn">Menu ☰</button>
-    <div class="dropdown-content">
-      <a href="index.html">Home</a>
-      <a href="chi-siamo.html">Chi Siamo</a>
-      <a href="servizi.html">Servizi</a>
-      <a href="contatti.html">Contatti</a>
-    </div>
-  </div>
-</nav>
 
-<!-- HERO SECTION -->
-<div class="hero">
-  <h1>Chi Siamo</h1>
-</div>
+<header>
+  <h1>MLC</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="contatti.html">Contatti</a>
+  </nav>
+</header>
 
-<!-- MAIN CONTENT -->
 <section>
   <h2>La Nostra Storia</h2>
   <p>Ciao! Sono Stefania, wedding planner specializzata in matrimoni low cost ma pieni di stile.</p>
@@ -149,7 +129,7 @@ a.button:hover {
   <p>Noi di MLC vogliamo cambiare questo approccio. Crediamo che organizzare un matrimonio debba essere un'esperienza gioiosa e senza stress. Ecco perché ti offriamo un prezzo finito e comprensivo di tutto, senza sorprese o costi nascosti.</p>
   <p>Il nostro obiettivo è renderti le cose più semplici e trasparenti possibile. Vogliamo che tu sappia esattamente quanto costa il tuo matrimonio — e poi ci occupiamo noi di tutto il resto, dalle decorazioni al catering. Lascia a noi la parte difficile, e goditi il tuo matrimonio!</p>
 
-  <a href="contatti.html" class="button">Contattaci</a>
+  <a href="contatti.html" class="btn">Contattaci</a>
 </section>
 
 </body>

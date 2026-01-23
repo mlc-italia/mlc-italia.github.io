@@ -1,147 +1,293 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MLC – Matrimoni Low Cost</title>
-<meta name="description" content="MLC – Matrimoni Low Cost in Friuli. Organizziamo matrimoni eleganti e accessibili, dai pacchetti base ai servizi completi.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
- 
-body {
-  font-family:"Poppins",sans-serif;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:#f7f7f7;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
-  padding:100px 20px 40px;
-  line-height:1.55;
-  text-shadow: 0 0 2px rgba(0,0,0,0.3);
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MLC – Matrimoni Low Cost</title>
 
-/* MENU */
-nav {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-}
-.dropbtn {
-  background-color: #6b8e77;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-.dropdown { position: relative; display: inline-block; }
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: #fff;
-  min-width: 160px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  overflow: hidden;
-}
-.dropdown-content a {
-  color: #6b8e77;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-weight: 500;
-}
-.dropdown-content a:hover { background-color: #e3ede6; }
-.dropdown:hover .dropdown-content { display:block; }
-.dropdown:hover .dropbtn { background-color: #58725f; }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      background-color: #faf7f4;
+      line-height: 1.6;
+    }
 
-/* HOME CARD */
-.home-card {
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 40px;
-  max-width:600px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.35), 0 0 15px rgba(255,255,255,0.05);
-  animation: fadeIn 1.5s ease;
-}
+    header {
+      background: #fff;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      z-index: 10;
+    }
 
-@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 2px;
+    }
 
-.home-card img {
-  max-width:150px;
-  margin-bottom:20px;
-  box-shadow: 0 0 12px rgba(255,255,255,0.3);
-  border-radius: 12px;
-}
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+    }
 
-h1 {
-  font-weight:700;
-  font-size:3em;
-  color:#f7f7f7;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-  margin-bottom:15px;
-}
+    nav a:hover {
+      color: #c39a6b;
+    }
 
-p {
-  font-size:1.2em;
-  font-weight:300;
-  margin-bottom:25px;
-  color:#f7f7f7;
-  text-shadow: 0 0 2px rgba(0,0,0,0.3);
-}
+    .hero {
+      background: url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e") center/cover no-repeat;
+      color: white;
+      padding: 120px 60px;
+      text-align: left;
+    }
 
-a.button {
-  display:inline-block;
-  padding:12px 25px;
-  background:#7fbf87;
-  color:white;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:500;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3), 0 0 10px rgba(127,191,135,0.3);
-}
-a.button:hover {
-  background:#6fa36f;
-  transform:translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4), 0 0 12px rgba(111,163,111,0.4);
-}
+    .hero h2 {
+      font-size: 42px;
+      max-width: 600px;
+    }
 
-@media (max-width:600px) {
-  h1 { font-size:2.2em; }
-  .home-card { padding:30px; }
-}
-</style>
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      background: #c39a6b;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 80px 60px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h3 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .feature {
+      background: white;
+      padding: 30px;
+      border-radius: 6px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .card h4 {
+      margin-top: 0;
+    }
+
+    .price {
+      font-size: 22px;
+      color: #c39a6b;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 25px;
+      border-left: 4px solid #c39a6b;
+      border-radius: 4px;
+      font-style: italic;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+
+    footer {
+      background: #333;
+      color: #eee;
+      text-align: center;
+      padding: 30px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
+      .hero {
+        padding: 80px 30px;
+      }
+
+      .contact {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="dropdown">
-    <button class="dropbtn">Menu ☰</button>
-    <div class="dropdown-content">
-      <a href="index.html">Home</a>
-      <a href="chi-siamo.html">Chi Siamo</a>
-      <a href="servizi.html">Servizi</a>
-      <a href="contatti.html">Contatti</a>
+<header>
+  <h1>MLC</h1>
+  <nav>
+    <a href="#chi-siamo">Chi siamo</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Il tuo matrimonio, semplice e accessibile. Senza rinunce.</h2>
+  <p>Organizziamo matrimoni low cost curati nei dettagli, in tutta Italia.</p>
+  <a href="#contatti" class="btn">Richiedi un preventivo gratuito</a>
+</section>
+
+<section id="chi-siamo">
+  <h3>Chi siamo</h3>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    MLC nasce per chi desidera un matrimonio autentico, ben organizzato e senza spese inutili.
+    Crediamo che il giorno più bello debba essere vissuto con serenità, non con ansia e budget fuori controllo.
+  </p>
+</section>
+
+<section id="servizi">
+  <h3>I nostri servizi</h3>
+  <div class="services">
+    <div class="card">
+      <h4>Pacchetto Base</h4>
+      <ul>
+        <li>Coordinamento essenziale</li>
+        <li>Supporto fornitori</li>
+        <li>Budget ridotto</li>
+      </ul>
+      <div class="price">Da 1.500 €</div>
+    </div>
+
+    <div class="card">
+      <h4>Pacchetto Avanzato</h4>
+      <ul>
+        <li>Organizzazione completa</li>
+        <li>Location e allestimenti</li>
+        <li>Assistenza il giorno evento</li>
+      </ul>
+      <div class="price">Da 3.500 €</div>
+    </div>
+
+    <div class="card">
+      <h4>Servizi Extra</h4>
+      <ul>
+        <li>Fotografo & Video</li>
+        <li>Musica e DJ</li>
+        <li>Allestimenti personalizzati</li>
+      </ul>
     </div>
   </div>
-</nav>
+</section>
 
-<div class="home-card">
-  <img src="img/logo.png" alt="Logo MLC">
-  <h1>MLC</h1>
-  <p>Matrimoni Low Cost – rendiamo il giorno più bello accessibile a tutti, con stile e semplicità.</p>
-  <a href="chi-siamo.html" class="button">Scopri di più</a>
-</div>
+<section id="portfolio">
+  <h3>Portfolio</h3>
+  <div class="portfolio">
+    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf" alt="">
+    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e" alt="">
+    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" alt="">
+  </div>
+</section>
+
+<section>
+  <h3>Dicono di noi</h3>
+  <div class="testimonials">
+    <div class="testimonial">
+      “Grazie a MLC abbiamo avuto il matrimonio che volevamo, senza stress.”
+      <br><strong>— Marco & Laura</strong>
+    </div>
+    <div class="testimonial">
+      “Professionali, chiari e sempre disponibili. Consigliatissimi.”
+      <br><strong>— Giulia & Andrea</strong>
+    </div>
+  </div>
+</section>
+
+<section id="contatti">
+  <h3>Contattaci</h3>
+  <div class="contact">
+    <form>
+      <input type="text" placeholder="Nome" required>
+      <input type="email" placeholder="Email" required>
+      <textarea rows="5" placeholder="Raccontaci che matrimonio hai in mente"></textarea>
+      <button class="btn" type="submit">Invia</button>
+    </form>
+
+    <div>
+      <p><strong>Email:</strong> info@mlc-italia.it</p>
+      <p><strong>WhatsApp:</strong> +39 123 456 789</p>
+      <p><strong>Operiamo in tutta Italia</strong></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 MLC – Matrimoni Low Cost
+</footer>
 
 </body>
 </html>

@@ -1,187 +1,139 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MLC – Matrimoni Low Cost</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MLC – Matrimoni Low Cost</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: #333;
-      background-color: #faf7f4;
-      line-height: 1.6;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background-color: #faf7f4;
+    line-height: 1.6;
+  }
 
-    header {
-      background: #fff;
-      padding: 20px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      z-index: 10;
-    }
+  header {
+    background: #fff;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    z-index: 10;
+  }
 
-    header h1 {
-      margin: 0;
-      font-size: 26px;
-      letter-spacing: 2px;
-    }
+  header h1 {
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 2px;
+  }
 
-    nav a {
-      margin-left: 25px;
-      text-decoration: none;
-      color: #555;
-      font-weight: 500;
-    }
+  nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+  }
 
-    nav a:hover {
-      color: #c39a6b;
-    }
+  nav a:hover { color: #c39a6b; }
 
-    .hero {
-      background: url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e") center/cover no-repeat;
-      color: white;
-      padding: 120px 60px;
-      text-align: left;
-    }
+  .hero {
+    background: url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e") center/cover no-repeat;
+    color: white;
+    padding: 120px 60px;
+    text-align: left;
+  }
 
-    .hero h2 {
-      font-size: 42px;
-      max-width: 600px;
-    }
+  .hero h2 { font-size: 42px; max-width: 600px; }
+  .hero p { font-size: 18px; max-width: 600px; }
 
-    .hero p {
-      font-size: 18px;
-      max-width: 600px;
-    }
+  .btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: #c39a6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+  }
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 28px;
-      background: #c39a6b;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-    }
+  .btn:hover { background: #a67c55; }
 
-    section {
-      padding: 80px 60px;
-      max-width: 1200px;
-      margin: auto;
-    }
+  section {
+    padding: 80px 60px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
 
-    section h3 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 40px;
-    }
+  section h3 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #c39a6b;
+  }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      text-align: center;
-    }
+  section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    font-size: 1.05em;
+    color: #333;
+  }
 
-    .feature {
-      background: white;
-      padding: 30px;
-      border-radius: 6px;
-    }
+  .services, .portfolio, .testimonials {
+    display: grid;
+    gap: 30px;
+  }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
+  .services { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .portfolio { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .testimonials { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 6px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+  .card, .testimonial {
+    background: white;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
 
-    .card h4 {
-      margin-top: 0;
-    }
+  .card h4 { margin-top: 0; color: #c39a6b; }
+  .price { font-size: 22px; color: #c39a6b; font-weight: bold; margin-top: 15px; }
 
-    .price {
-      font-size: 22px;
-      color: #c39a6b;
-      font-weight: bold;
-      margin-top: 15px;
-    }
+  .portfolio img {
+    width: 100%;
+    border-radius: 6px;
+  }
 
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
+  .testimonial { border-left: 4px solid #c39a6b; font-style: italic; }
 
-    .portfolio img {
-      width: 100%;
-      border-radius: 6px;
-    }
+  footer {
+    background: #333;
+    color: #eee;
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+  }
 
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
+  @media (max-width: 768px) {
+    header { flex-direction: column; }
+    .hero { padding: 80px 30px; }
+    section { padding: 50px 30px; margin: 20px auto; }
+    .contact { grid-template-columns: 1fr; }
+  }
 
-    .testimonial {
-      background: white;
-      padding: 25px;
-      border-left: 4px solid #c39a6b;
-      border-radius: 4px;
-      font-style: italic;
-    }
-
-    .contact {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-family: inherit;
-    }
-
-    footer {
-      background: #333;
-      color: #eee;
-      text-align: center;
-      padding: 30px;
-      margin-top: 60px;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-      }
-
-      .hero {
-        padding: 80px 30px;
-      }
-
-      .contact {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  @media (max-width: 480px) {
+    .hero { padding: 60px 20px; }
+    section { padding: 30px 15px; margin: 15px auto; }
+  }
+</style>
 </head>
 
 <body>
@@ -189,25 +141,24 @@
 <header>
   <h1>MLC</h1>
   <nav>
-    <a href="#chi-siamo">Chi siamo</a>
-    <a href="#servizi">Servizi</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contatti">Contatti</a>
+    <a href="index.html">Home</a>
+    <a href="chi-siami.html">Chi siamo</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="contatti.html">Contatti</a>
   </nav>
 </header>
 
 <section class="hero">
   <h2>Il tuo matrimonio, semplice e accessibile. Senza rinunce.</h2>
   <p>Organizziamo matrimoni low cost curati nei dettagli, in tutta Italia.</p>
-  <a href="#contatti" class="btn">Richiedi un preventivo gratuito</a>
+  <a href="contatti.html" class="btn">Richiedi un preventivo gratuito</a>
 </section>
 
 <section id="chi-siamo">
   <h3>Chi siamo</h3>
-  <p style="text-align:center; max-width:800px; margin:auto;">
-    MLC nasce per chi desidera un matrimonio autentico, ben organizzato e senza spese inutili.
-    Crediamo che il giorno più bello debba essere vissuto con serenità, non con ansia e budget fuori controllo.
-  </p>
+  <p>MLC nasce per chi desidera un matrimonio autentico, ben organizzato e senza spese inutili.</p>
+  <p>Crediamo che il giorno più bello debba essere vissuto con serenità, non con ansia e budget fuori controllo.</p>
+  <a href="chi-siami.html" class="btn">Scopri di più</a>
 </section>
 
 <section id="servizi">
@@ -242,6 +193,9 @@
       </ul>
     </div>
   </div>
+  <div style="text-align:center; margin-top:20px;">
+    <a href="servizi.html" class="btn">Scopri tutti i servizi</a>
+  </div>
 </section>
 
 <section id="portfolio">
@@ -269,19 +223,11 @@
 
 <section id="contatti">
   <h3>Contattaci</h3>
-  <div class="contact">
-    <form>
-      <input type="text" placeholder="Nome" required>
-      <input type="email" placeholder="Email" required>
-      <textarea rows="5" placeholder="Raccontaci che matrimonio hai in mente"></textarea>
-      <button class="btn" type="submit">Invia</button>
-    </form>
-
-    <div>
-      <p><strong>Email:</strong> info@mlc-italia.it</p>
-      <p><strong>WhatsApp:</strong> +39 123 456 789</p>
-      <p><strong>Operiamo in tutta Italia</strong></p>
-    </div>
+  <div style="text-align:center;">
+    <p><strong>Email:</strong> info@mlc-italia.it</p>
+    <p><strong>WhatsApp:</strong> +39 123 456 789</p>
+    <p><strong>Operiamo in tutta Italia</strong></p>
+    <a href="contatti.html" class="btn">Richiedi un preventivo</a>
   </div>
 </section>
 

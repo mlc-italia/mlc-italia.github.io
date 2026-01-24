@@ -5,121 +5,154 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contatti – MLC</title>
 
+<!-- SEO -->
+<meta name="description" content="Contatta MLC per richiedere informazioni o preventivi per matrimoni low cost in Italia. Wedding planner, location, decorazioni, fotografo, musica e molto altro.">
+<meta name="keywords" content="contatti, wedding planner, matrimoni low cost, preventivo matrimonio, MLC, Friuli, email, telefono">
+<meta name="author" content="MLC – Stefania">
+
 <style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    background-color: #faf7f4;
-    line-height: 1.6;
-  }
+/* BASE */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background: #f5f0e8;
+}
 
-  header {
-    background: #fff;
-    padding: 20px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    z-index: 10;
-  }
+/* HEADER */
+header {
+  background: rgba(255,255,255,0.95);
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
 
-  header h1 {
-    margin: 0;
-    font-size: 26px;
-    letter-spacing: 2px;
-  }
+.logo {
+  height: 55px;
+  object-fit: contain;
+}
 
-  nav a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-  }
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
 
-  nav a:hover { color: #c39a6b; }
+nav a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #c39a6b;
+  transition: width 0.3s ease;
+  margin: auto;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+}
 
-  .content {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 50px 40px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    text-align: center;
-  }
+nav a:hover::after {
+  width: 100%;
+}
 
-  h1 {
-    font-size: 32px;
-    margin-bottom: 25px;
-    color: #c39a6b;
-  }
+nav a:hover {
+  color: #c39a6b;
+  transform: translateY(-2px);
+}
 
-  p { margin-bottom: 15px; font-size: 1em; color: #555; }
+/* CONTENT GLASS */
+.content {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 50px 40px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  text-align: center;
+  animation: fadeUp 0.9s ease both;
+}
 
-  a.button {
-    display: inline-block;
-    padding: 14px 28px;
-    background: #c39a6b;
-    color: white;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-  }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-  a.button:hover { background: #a67c55; }
+/* TITOLI */
+h1 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #c39a6b;
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-  }
+/* TESTI */
+p { margin-bottom: 15px; font-size: 1em; color: #555; }
+a { color: #c39a6b; text-decoration: underline; transition: all 0.3s ease; }
+a:hover { color: #a67c55; }
 
-  input, textarea {
-    padding: 12px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-family: inherit;
-    font-size: 1em;
-    width: 100%;
-  }
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
 
-  textarea { min-height: 100px; resize: vertical; }
+input, textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1em;
+  width: 100%;
+}
 
-  input[type="submit"] {
-    background: #c39a6b;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    padding: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
+textarea { min-height: 100px; resize: vertical; }
 
-  input[type="submit"]:hover {
-    background: #a67c55;
-    transform: translateY(-2px);
-  }
+input[type="submit"] {
+  background: #c39a6b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
 
-  @media (max-width: 768px) {
-    .content { padding: 40px 20px; }
-  }
+input[type="submit"]:hover {
+  background: #a67c55;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
 
-  @media (max-width: 480px) {
-    h1 { font-size: 28px; }
-  }
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .content { padding: 40px 20px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 28px; }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>MLC</h1>
+  <img src="img/logo.png" alt="MLC" class="logo">
   <nav>
     <a href="index.html">Home</a>
     <a href="chi-siamo.html">Chi siamo</a>
@@ -131,8 +164,8 @@
 <div class="content">
   <h1>Contatti</h1>
   <p>Per richiedere informazioni o un preventivo personalizzato, contattami direttamente tramite email o telefono:</p>
-  <p><strong>Email:</strong> <a href="mailto:matrimoniodrive@gmail.com" style="color:#c39a6b; text-decoration:underline;">matrimoniodrive@gmail.com</a></p>
-  <p><strong>Telefono:</strong> <a href="tel:+393286627293" style="color:#c39a6b; text-decoration:underline;">+39 328 662 7293</a></p>
+  <p><strong>Email:</strong> <a href="mailto:matrimoniodrive@gmail.com">matrimoniodrive@gmail.com</a></p>
+  <p><strong>Telefono:</strong> <a href="tel:+393286627293">+39 328 662 7293</a></p>
 
   <p>Oppure utilizza il modulo qui sotto:</p>
 

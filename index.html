@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>MLC – Matrimoni Low Cost</title>
 
-<!-- SEO Meta -->
-<meta name="description" content="MLC – Matrimoni Low Cost in Italia. Organizziamo matrimoni autentici, curati nei dettagli e accessibili. Servizi wedding planner, location, decorazioni, fotografo, musica, inviti, bomboniere.">
-<meta name="keywords" content="matrimoni low cost, wedding planner, matrimoni Italia, pacchetti matrimonio, location matrimonio, allestimenti matrimonio, decorazioni matrimonio, bouquet sposa, fotografo matrimonio, video matrimonio, DJ matrimonio, musica matrimonio, bomboniere, inviti matrimonio, trucco sposa, acconciatura sposa, tableau de mariage, servizi matrimonio, organizzazione matrimonio, matrimonio elegante economico, MLC wedding, matrimoni Friuli, matrimoni Nord Italia, matrimonio senza stress, matrimonio curato, matrimonio romantico, matrimonio semplice, matrimonio accessibile, pacchetto base matrimonio, pacchetto avanzato matrimonio, servizi extra matrimonio, preventivo matrimonio gratuito">
+<meta name="description" content="MLC – Matrimoni Low Cost in Italia. Organizziamo matrimoni autentici, curati nei dettagli e accessibili. Wedding planner, location, decorazioni, fotografo, musica, inviti, bomboniere e servizi su misura.">
+<meta name="keywords" content="matrimoni low cost, wedding planner, matrimoni Italia, pacchetti matrimonio, location matrimonio, allestimenti matrimonio, decorazioni matrimonio, bouquet sposa, fotografo matrimonio, video matrimonio, DJ matrimonio, musica matrimonio, bomboniere, inviti matrimonio, trucco sposa, acconciatura sposa, tableau de mariage, servizi matrimonio, organizzazione matrimonio, matrimonio elegante economico, MLC wedding, matrimoni Friuli, matrimoni Nord Italia, matrimonio senza stress, matrimonio curato, matrimonio romantico, matrimonio semplice, matrimonio accessibile, pacchetto base matrimonio, pacchetto avanzato matrimonio, servizi extra matrimonio, preventivo matrimonio gratuito, matrimonio economico, wedding planner Italia, decorazioni floreali matrimonio, musica cerimonia, fotografo sposi, inviti personalizzati, bomboniere creative">
 
 <style>
 /* RESET BASE */
@@ -16,9 +15,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   color: #333;
   line-height: 1.6;
-  background:
-    radial-gradient(circle at top left, #ffffff, #faf7f4 60%),
-    radial-gradient(circle at bottom right, #f3ede7, #faf7f4 60%);
+  background-color: #f5eee4; /* beige tenue */
 }
 
 /* HEADER */
@@ -45,12 +42,28 @@ nav a {
   text-decoration: none;
   color: #555;
   font-weight: 500;
+  position: relative;
   transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #c39a6b;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
 nav a:hover {
   color: #c39a6b;
-  transform: translateY(-2px);
+}
+
+nav a:hover::after {
+  width: 60%;
 }
 
 /* HERO / BANNER */
@@ -76,15 +89,8 @@ nav a:hover {
   animation: fadeInUp 1s ease forwards;
 }
 
-.hero h2 {
-  font-size: 42px;
-  max-width: 600px;
-}
-
-.hero p {
-  font-size: 18px;
-  max-width: 600px;
-}
+.hero h2 { font-size: 42px; max-width: 600px; }
+.hero p { font-size: 18px; max-width: 600px; }
 
 /* BOTTONI */
 .btn {
@@ -105,27 +111,22 @@ nav a:hover {
   transform: translateY(-3px) scale(1.03);
 }
 
-/* SEZIONI */
+/* SEZIONI GLASS */
 section {
+  position: relative;
   padding: 90px 60px;
   max-width: 1200px;
   margin: 70px auto;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.65); /* glass effect */
+  backdrop-filter: blur(10px);
   border-radius: 18px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
   animation: fadeUp 0.9s ease both;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* ANIMAZIONI */
+@keyframes fadeUp { from { opacity:0; transform:translateY(25px);} to { opacity:1; transform:translateY(0);} }
+@keyframes fadeInUp { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
 
 section h3 {
   text-align: center;
@@ -139,17 +140,13 @@ section p {
   max-width: 800px;
   margin: 0 auto 20px auto;
   font-size: 1.05em;
-  color: #333;
+  color: #5a3c1f; /* testo più caldo */
 }
 
 /* GRID */
 .services,
 .portfolio,
-.testimonials {
-  display: grid;
-  gap: 30px;
-}
-
+.testimonials { display: grid; gap: 30px; }
 .services { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 .portfolio { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .testimonials { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
@@ -157,29 +154,22 @@ section p {
 /* CARD */
 .card,
 .testimonial {
-  background: white;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
   padding: 35px;
   border-radius: 14px;
   box-shadow: 0 8px 22px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover, .testimonial:hover {
+.card:hover,
+.testimonial:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
-.card h4 {
-  margin-top: 0;
-  color: #c39a6b;
-}
-
-.price {
-  font-size: 22px;
-  color: #c39a6b;
-  font-weight: bold;
-  margin-top: 15px;
-}
+.card h4 { margin-top: 0; color: #c39a6b; }
+.price { font-size: 22px; color: #c39a6b; font-weight: bold; margin-top: 15px; }
 
 .portfolio img {
   width: 100%;
@@ -187,10 +177,7 @@ section p {
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-.testimonial {
-  border-left: 4px solid #c39a6b;
-  font-style: italic;
-}
+.testimonial { border-left: 4px solid #c39a6b; font-style: italic; }
 
 /* FOOTER */
 footer {
@@ -203,17 +190,14 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 15px;
-  }
+  header { flex-direction: column; gap: 15px; }
   .hero { padding: 100px 30px; }
   section { padding: 60px 30px; margin: 40px auto; }
 }
 
 @media (max-width: 480px) {
   .hero { padding: 80px 20px; }
-  section { padding: 40px 20px; }
+  section { padding: 40px 20px; margin: 20px auto; }
 }
 </style>
 </head>

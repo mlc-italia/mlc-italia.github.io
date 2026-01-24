@@ -75,7 +75,6 @@ header {
   transition: 0.4s;
 }
 
-/* HAMBURGER ANIMATO */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px,5px);
 }
@@ -128,6 +127,7 @@ header {
   padding: 150px 60px;
   color: white;
   position: relative;
+  text-align: center;
 }
 
 .hero::before {
@@ -151,6 +151,12 @@ header {
   border-radius:30px;
   font-weight:bold;
   margin-top:25px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background:#a67c55;
+  transform: translateY(-2px) scale(1.02);
 }
 
 /* SEZIONI */
@@ -175,6 +181,12 @@ section {
   background:white;
   padding:30px;
   border-radius:18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 /* FOOTER */
@@ -227,9 +239,24 @@ footer {
 </nav>
 
 <section class="hero">
-  <h2>Il tuo matrimonio, semplice e accessibile.</h2>
+  <h1>Il tuo matrimonio, semplice e accessibile</h1>
   <p>Curato nei dettagli, senza sprechi.</p>
   <a href="contatti.html" class="btn">Richiedi preventivo</a>
+</section>
+
+<section class="services">
+  <div class="card">
+    <h3>Wedding Planner</h3>
+    <p>Organizziamo ogni dettaglio del tuo matrimonio, dal tableau ai fiori, con un pacchetto trasparente e chiaro.</p>
+  </div>
+  <div class="card">
+    <h3>Location</h3>
+    <p>Selezioniamo solo i locali più belli e accessibili del Friuli, per matrimoni eleganti senza costi esagerati.</p>
+  </div>
+  <div class="card">
+    <h3>Fotografia & Musica</h3>
+    <p>Fotografi professionisti, musicisti e DJ per rendere ogni momento unico e memorabile.</p>
+  </div>
 </section>
 
 <footer>

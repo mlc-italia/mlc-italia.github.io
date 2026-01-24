@@ -4,108 +4,139 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chi Siamo – MLC</title>
-<meta name="description" content="Chi siamo – MLC, wedding planner specializzata in matrimoni low cost e pieni di stile in Friuli.">
-<meta name="keywords" content="chi siamo, wedding planner, matrimoni low cost, Friuli, MLC">
+
+<!-- SEO -->
+<meta name="description" content="Chi siamo – MLC, wedding planner specializzata in matrimoni low cost e pieni di stile in Friuli. Organizziamo matrimoni autentici, curati nei dettagli e accessibili.">
+<meta name="keywords" content="chi siamo, wedding planner, matrimoni low cost, Friuli, MLC, servizi matrimonio, allestimenti matrimonio, decorazioni, fotografo matrimonio, DJ matrimonio, inviti personalizzati, matrimonio accessibile, pacchetto matrimonio">
 <meta name="author" content="MLC – Stefania">
 
 <style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    background-color: #faf7f4;
-    line-height: 1.6;
-  }
+/* RESET & BASE */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background: #f5f0e8;
+}
 
-  header {
-    background: #fff;
-    padding: 20px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    z-index: 10;
-  }
+/* HEADER */
+header {
+  background: rgba(255,255,255,0.95);
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
 
-  header h1 {
-    margin: 0;
-    font-size: 26px;
-    letter-spacing: 2px;
-  }
+.logo {
+  height: 55px;
+  object-fit: contain;
+}
 
-  nav a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-  }
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
 
-  nav a:hover {
-    color: #c39a6b;
-  }
+nav a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #c39a6b;
+  transition: width 0.3s ease;
+  margin: auto;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+}
 
-  section {
-    padding: 80px 60px;
-    max-width: 900px;
-    margin: 40px auto;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  }
+nav a:hover::after {
+  width: 100%;
+}
 
-  section h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #c39a6b;
-  }
+nav a:hover {
+  color: #c39a6b;
+  transform: translateY(-2px);
+}
 
-  section p {
-    margin-bottom: 18px;
-    font-size: 1.05em;
-    color: #333;
-  }
+/* SEZIONI GLASS */
+section {
+  padding: 80px 60px;
+  max-width: 1000px;
+  margin: 60px auto;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  animation: fadeUp 0.9s ease both;
+}
 
-  .btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 14px 28px;
-    background: #c39a6b;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-  }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-  .btn:hover {
-    background: #a67c55;
-  }
+section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #c39a6b;
+}
 
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-    }
-    section {
-      padding: 50px 30px;
-      margin: 20px;
-    }
-  }
+section p {
+  margin-bottom: 18px;
+  font-size: 1.05em;
+  color: #333;
+}
 
-  @media (max-width: 480px) {
-    section {
-      padding: 30px 15px;
-      margin: 15px;
-    }
-  }
+/* BOTTONI */
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 30px;
+  background: #c39a6b;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+  background: #a67c55;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 15px; }
+  section { padding: 60px 30px; margin: 40px 20px; }
+}
+
+@media (max-width: 480px) {
+  section { padding: 40px 20px; margin: 20px 10px; }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>MLC</h1>
+  <img src="img/logo.png" alt="MLC" class="logo">
   <nav>
     <a href="index.html">Home</a>
     <a href="chi-siamo.html">Chi siamo</a>

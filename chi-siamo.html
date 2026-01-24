@@ -6,18 +6,17 @@
 <title>Chi Siamo – MLC</title>
 
 <!-- SEO -->
-<meta name="description" content="Chi siamo – MLC, wedding planner specializzata in matrimoni low cost e pieni di stile in Friuli. Organizziamo matrimoni autentici, curati nei dettagli e accessibili.">
-<meta name="keywords" content="chi siamo, wedding planner, matrimoni low cost, Friuli, MLC, servizi matrimonio, allestimenti matrimonio, decorazioni, fotografo matrimonio, DJ matrimonio, inviti personalizzati, matrimonio accessibile, pacchetto matrimonio">
+<meta name="description" content="Chi siamo – MLC, wedding planner specializzata in matrimoni low cost, curati e accessibili in tutta Italia.">
+<meta name="keywords" content="chi siamo, wedding planner, matrimoni low cost, MLC wedding">
 <meta name="author" content="MLC – Stefania">
 
 <style>
-/* RESET & BASE */
+/* BASE */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
+  background: #fdf7f0;
   color: #333;
-  line-height: 1.6;
-  background: #f5f0e8;
 }
 
 /* HEADER */
@@ -29,106 +28,142 @@ header {
   align-items: center;
   position: sticky;
   top: 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  backdrop-filter: blur(6px);
-  z-index: 10;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-.logo {
-  height: 55px;
-  object-fit: contain;
-}
+.logo { height: 55px; }
 
-nav a {
+/* NAV DESKTOP */
+.nav-desktop a {
   margin-left: 25px;
   text-decoration: none;
   color: #555;
   font-weight: 500;
   position: relative;
-  transition: all 0.3s ease;
 }
 
-nav a::after {
-  content: '';
-  display: block;
-  height: 2px;
-  width: 0;
-  background: #c39a6b;
-  transition: width 0.3s ease;
-  margin: auto;
-  position: absolute;
-  bottom: -4px;
+.nav-desktop a::after {
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:-4px;
+  left:50%;
+  background:#c39a6b;
+  transition:.3s;
+}
+
+.nav-desktop a:hover::after {
+  width:100%;
+  left:0;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 120;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #333;
+  border-radius: 3px;
+  transition: 0.4s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px,5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px,-6px);
+}
+
+/* OVERLAY */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 90;
+}
+
+/* NAV MOBILE */
+.nav-mobile {
+  position: fixed;
+  top: 90px;
   left: 0;
-  right: 0;
-}
-
-nav a:hover::after {
   width: 100%;
+  background: rgba(245,238,228,0.95);
+  backdrop-filter: blur(10px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  z-index: 100;
 }
 
-nav a:hover {
-  color: #c39a6b;
-  transform: translateY(-2px);
+.nav-mobile a {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+  padding: 12px 0;
 }
 
-/* SEZIONI GLASS */
+/* SEZIONE */
 section {
   padding: 80px 60px;
   max-width: 1000px;
   margin: 60px auto;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(8px);
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  animation: fadeUp 0.9s ease both;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
+  background: rgba(245,238,228,0.75);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
 section h2 {
   text-align: center;
   font-size: 32px;
-  margin-bottom: 30px;
   color: #c39a6b;
+  margin-bottom: 30px;
 }
 
 section p {
-  margin-bottom: 18px;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
   font-size: 1.05em;
-  color: #333;
 }
 
-/* BOTTONI */
+/* BTN */
 .btn {
   display: inline-block;
-  margin-top: 25px;
+  margin-top: 30px;
   padding: 14px 30px;
   background: #c39a6b;
   color: white;
   text-decoration: none;
   border-radius: 30px;
   font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-}
-
-.btn:hover {
-  background: #a67c55;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-  header { flex-direction: column; gap: 15px; }
-  section { padding: 60px 30px; margin: 40px 20px; }
-}
+@media (max-width:768px) {
+  .nav-desktop { display:none; }
+  .hamburger { display:flex; }
+  .overlay.active { display:block; }
+  .nav-mobile.active { display:flex; }
 
-@media (max-width: 480px) {
-  section { padding: 40px 20px; margin: 20px 10px; }
+  header { padding:20px 30px; }
+  section { padding:50px 25px; margin:40px 20px; }
 }
 </style>
 </head>
@@ -136,32 +171,59 @@ section p {
 <body>
 
 <header>
-  <img src="img/logo.png" alt="MLC" class="logo">
-  <nav>
+  <img src="img/logo.png" class="logo" alt="MLC">
+
+  <nav class="nav-desktop">
     <a href="index.html">Home</a>
     <a href="chi-siamo.html">Chi siamo</a>
     <a href="servizi.html">Servizi</a>
     <a href="contatti.html">Contatti</a>
   </nav>
+
+  <div class="hamburger" onclick="toggleMenu(this)">
+    <span></span><span></span><span></span>
+  </div>
 </header>
 
+<div class="overlay" onclick="closeMenu()"></div>
+
+<nav class="nav-mobile" id="navMobile">
+  <a href="index.html">Home</a>
+  <a href="chi-siamo.html">Chi siamo</a>
+  <a href="servizi.html">Servizi</a>
+  <a href="contatti.html">Contatti</a>
+  <a href="contatti.html" class="btn">Preventivo gratuito</a>
+</nav>
+
 <section>
-  <h2>La Nostra Storia</h2>
+  <h2>La nostra storia</h2>
   <p>Ciao! Sono Stefania, wedding planner specializzata in matrimoni low cost ma pieni di stile.</p>
-  <p>Organizzo con cura ogni dettaglio del tuo grande giorno: dal tableau de mariage alle bomboniere, dagli allestimenti floreali ai libretti messa e ai coni porta riso — tutto pensato per emozionare, non per svuotare il portafoglio.</p>
-  <p>Mi occupo anche della ricerca dei locali più belli e accessibili del Friuli, per offrirti la cornice perfetta senza costi esagerati.</p>
+  <p>Organizzo con cura ogni dettaglio del tuo grande giorno, dagli allestimenti alle bomboniere, senza sprechi inutili.</p>
 
-  <h2>I Nostri Servizi</h2>
-  <p>Ho già selezionato per te un pacchetto di fornitori low cost affidabili: trucco, acconciatura, fotografo, violiniste per la Messa e DJ pronti a rendere unico il tuo matrimonio.</p>
-  <p>E per rendere tutto ancora più speciale, posso realizzare anche: inviti personalizzati digitali o cartacei, reminder telematici eleganti e persino un sito web dedicato al tuo matrimonio.</p>
+  <h2>I nostri servizi</h2>
+  <p>Collaboro con fornitori affidabili per offrirti soluzioni complete e accessibili: fotografo, musica, allestimenti, inviti e molto altro.</p>
 
-  <h2>La Nostra Missione</h2>
-  <p>Sappiamo bene che organizzare un matrimonio può essere un'esperienza emozionante, ma anche stressante e piena di domande. Spesso ci si trova a dover perdere tempo per ottenere informazioni sui costi, contattando diversi fornitori e chiedendo preventivi.</p>
-  <p>Noi di MLC vogliamo cambiare questo approccio. Crediamo che organizzare un matrimonio debba essere un'esperienza gioiosa e senza stress. Ecco perché ti offriamo un prezzo finito e comprensivo di tutto, senza sorprese o costi nascosti.</p>
-  <p>Il nostro obiettivo è renderti le cose più semplici e trasparenti possibile. Vogliamo che tu sappia esattamente quanto costa il tuo matrimonio — e poi ci occupiamo noi di tutto il resto, dalle decorazioni al catering. Lascia a noi la parte difficile, e goditi il tuo matrimonio!</p>
+  <h2>La nostra missione</h2>
+  <p>Vogliamo rendere l’organizzazione del matrimonio semplice, trasparente e senza stress, con prezzi chiari e zero sorprese.</p>
 
-  <a href="contatti.html" class="btn">Contattaci</a>
+  <div style="text-align:center;">
+    <a href="contatti.html" class="btn">Contattaci</a>
+  </div>
 </section>
+
+<script>
+function toggleMenu(btn) {
+  btn.classList.toggle("active");
+  document.getElementById("navMobile").classList.toggle("active");
+  document.querySelector(".overlay").classList.toggle("active");
+}
+
+function closeMenu() {
+  document.querySelector(".hamburger").classList.remove("active");
+  document.getElementById("navMobile").classList.remove("active");
+  document.querySelector(".overlay").classList.remove("active");
+}
+</script>
 
 </body>
 </html>

@@ -13,7 +13,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #fdf7f0;
+  background: linear-gradient(180deg,#fdf7f0,#f7efe4);
   color: #333;
 }
 
@@ -27,7 +27,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
@@ -101,7 +101,7 @@ header {
   left: 0;
   width: 100%;
   background: rgba(245,238,228,0.95);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   display: none;
   flex-direction: column;
   align-items: center;
@@ -124,7 +124,7 @@ header {
 /* HERO */
 .hero {
   background: url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-  padding: 150px 60px;
+  padding: 160px 60px;
   color: white;
   position: relative;
   text-align: center;
@@ -134,67 +134,89 @@ header {
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,0.45);
+  background: linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.35)
+  );
 }
 
 .hero * {
   position: relative;
 }
 
+.hero h1 {
+  font-size: 42px;
+  max-width: 700px;
+  margin: 0 auto 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.95;
+}
+
 /* BOTTONI */
 .btn {
   display:inline-block;
-  padding:14px 30px;
+  padding:14px 34px;
   background:#c39a6b;
   color:white;
   text-decoration:none;
   border-radius:30px;
   font-weight:bold;
-  margin-top:25px;
+  margin-top:30px;
   transition: all 0.3s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
 
 .btn:hover {
   background:#a67c55;
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-3px) scale(1.03);
 }
 
 /* SEZIONI */
 section {
   padding: 80px 60px;
   max-width: 1200px;
-  margin: 60px auto;
+  margin: 80px auto;
   background: rgba(245,238,228,0.75);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
 }
 
 /* GRID */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+  gap:35px;
 }
 
 /* CARD */
 .card {
   background:white;
-  padding:30px;
-  border-radius:18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  padding:35px 30px;
+  border-radius:20px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+  margin-top: 0;
+  color:#c39a6b;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
 }
 
 /* FOOTER */
 footer {
-  background:#333;
+  background:#2f2f2f;
   color:#eee;
   text-align:center;
-  padding:30px;
+  padding:35px;
+  font-size: 14px;
 }
 
 /* RESPONSIVE */
@@ -205,8 +227,9 @@ footer {
   .nav-mobile.active { display:flex; }
 
   header { padding:20px 30px; }
-  .hero { padding:100px 30px; }
-  section { padding:50px 25px; }
+  .hero { padding:120px 30px; }
+  .hero h1 { font-size:32px; }
+  section { padding:50px 25px; margin:60px 20px; }
 }
 </style>
 </head>
@@ -240,22 +263,22 @@ footer {
 
 <section class="hero">
   <h1>Il tuo matrimonio, semplice e accessibile</h1>
-  <p>Curato nei dettagli, senza sprechi.</p>
+  <p>Curato nei dettagli, senza sprechi e senza costi inutili.</p>
   <a href="contatti.html" class="btn">Richiedi preventivo</a>
 </section>
 
 <section class="services">
   <div class="card">
     <h3>Wedding Planner</h3>
-    <p>Organizziamo ogni dettaglio del tuo matrimonio, dal tableau ai fiori, con un pacchetto trasparente e chiaro.</p>
+    <p>Organizziamo ogni dettaglio del tuo matrimonio, dal tableau ai fiori, con un pacchetto chiaro, trasparente e senza sorprese.</p>
   </div>
   <div class="card">
     <h3>Location</h3>
-    <p>Selezioniamo solo i locali più belli e accessibili del Friuli, per matrimoni eleganti senza costi esagerati.</p>
+    <p>Selezioniamo location belle e accessibili in Friuli, perfette per matrimoni eleganti e ben organizzati.</p>
   </div>
   <div class="card">
     <h3>Fotografia & Musica</h3>
-    <p>Fotografi professionisti, musicisti e DJ per rendere ogni momento unico e memorabile.</p>
+    <p>Professionisti affidabili per raccontare e accompagnare ogni momento importante del tuo giorno speciale.</p>
   </div>
 </section>
 

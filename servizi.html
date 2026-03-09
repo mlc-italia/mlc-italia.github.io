@@ -5,18 +5,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Servizi – MLC Matrimoni Low Cost</title>
+<title>Servizi – MLC</title>
 
-<meta name="description" content="Scopri i servizi di MLC: organizzazione completa, location, fotografia e musica per matrimoni eleganti e accessibili.">
+<!-- SEO -->
+<meta name="description" content="Scopri i pacchetti e servizi MLC per matrimoni low cost in Italia. Wedding planner, location, decorazioni, fotografo, musica, inviti, bomboniere e molto altro.">
+<meta name="keywords" content="servizi matrimonio, pacchetti matrimonio, matrimoni low cost, wedding planner, location matrimonio, decorazioni matrimonio, fotografo matrimonio, DJ matrimonio, musica matrimonio, inviti personalizzati, bomboniere, trucco sposa, acconciatura sposa, MLC, Friuli">
+<meta name="author" content="MLC – Stefania">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
+/* RESET /
+
 body{
 margin:0;
-font-family:"Segoe UI",sans-serif;
-background:#f5efe6 url("https://images.unsplash.com/photo-1520854221256-17451cc331bf") center/cover fixed;
-color:#4a3f38;
+font-family:'Inter',sans-serif;
+background:#f6f1ea;
+color:#2f2f2f;
+line-height:1.6;
 }
+
+/ HEADER /
 
 header{
 background:rgba(255,255,255,0.9);
@@ -24,60 +34,287 @@ padding:20px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+position:sticky;
+top:0;
+z-index:10;
+box-shadow:0 4px 12px rgba(0,0,0,0.06);
+backdrop-filter:blur(8px);
 }
 
-.logo{height:55px;}
+.logo{
+height:55px;
+}
+
+/ NAV /
 
 nav a{
 margin-left:25px;
 text-decoration:none;
-color:#4a3f38;
+color:#555;
+font-weight:500;
+position:relative;
+transition:0.3s;
 }
 
-.container{
-max-width:1000px;
-margin:80px auto;
+nav a::after{
+content:'';
+display:block;
+height:2px;
+width:0;
+background:#b89663;
+transition:0.3s;
+margin:auto;
+position:absolute;
+bottom:-4px;
+left:0;
+right:0;
 }
 
-.service{
-background:rgba(255,255,255,0.9);
-padding:50px;
+nav a:hover::after{
+width:100%;
+}
+
+nav a:hover{
+color:#b89663;
+transform:translateY(-2px);
+}
+
+/ HAMBURGER /
+
+.hamburger{
+display:none;
+flex-direction:column;
+gap:6px;
+cursor:pointer;
+}
+
+.hamburger span{
+width:26px;
+height:3px;
+background:#555;
+border-radius:3px;
+transition:0.4s;
+}
+
+.hamburger.active span:nth-child(1){
+transform:rotate(45deg) translate(5px,5px);
+}
+
+.hamburger.active span:nth-child(2){
+opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/ CONTENT /
+
+.content{
+max-width:1100px;
+margin:70px auto;
+padding:60px 40px;
+background:white;
 border-radius:16px;
-margin-bottom:30px;
+box-shadow:0 12px 40px rgba(0,0,0,0.08);
 }
 
-.service h2{
-margin-top:0;
-}
-
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:14px 30px;
-background:#cbb29d;
-color:white;
-text-decoration:none;
-border-radius:30px;
-}
-
-footer{
-background:rgba(0,0,0,0.75);
-color:white;
-padding:40px;
+h1{
+font-family:'Playfair Display',serif;
 text-align:center;
+font-size:34px;
+color:#b89663;
+margin-bottom:40px;
+}
+
+.extra h2{
+font-family:'Playfair Display',serif;
+text-align:center;
+color:#b89663;
+margin-bottom:20px;
+}
+
+/ TABELLA /
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:30px;
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+th{
+background:#f3ebe2;
+color:#b89663;
+font-weight:600;
+padding:14px;
+}
+
+td{
+padding:14px 12px;
+border-bottom:1px solid #eee;
+}
+
+td:first-child{
+text-align:left;
+font-weight:500;
+}
+
+td{
+text-align:center;
+}
+
+tr:hover{
+background:#faf7f2;
+}
+
+.yes{
+color:#2e8b57;
+font-weight:700;
+font-size:18px;
+}
+
+.no{
+color:#c94a4a;
+font-weight:700;
+font-size:18px;
+}
+
+/ PREZZI /
+
+.price-info{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.price-box{
+background:white;
+border-radius:14px;
+padding:25px 35px;
+text-align:center;
+box-shadow:0 10px 28px rgba(0,0,0,0.08);
+transition:0.3s;
+border:1px solid #eee;
+}
+
+.price-box:hover{
+transform:translateY(-6px);
+box-shadow:0 14px 35px rgba(0,0,0,0.12);
+}
+
+.price-box h3{
+font-family:'Playfair Display',serif;
+color:#b89663;
+margin-bottom:10px;
+}
+
+/ EXTRA /
+
+.extra{
 margin-top:60px;
+padding:30px;
+border-radius:14px;
+background:#faf7f2;
+}
+
+.extra p{
+text-align:center;
+margin-bottom:20px;
+}
+
+.extra ul{
+list-style:none;
+padding:0;
+max-width:600px;
+margin:auto;
+}
+
+.extra li{
+margin-bottom:10px;
+}
+
+.extra li::before{
+content:"✓";
+color:#2e8b57;
+margin-right:8px;
+}
+
+/ DOWNLOAD /
+
+.download-btn{
+display:block;
+width:220px;
+margin:40px auto 0;
+padding:14px 28px;
+background:#b89663;
+color:white;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+text-align:center;
+transition:0.3s;
+}
+
+.download-btn:hover{
+background:#9f7d4f;
+transform:translateY(-3px);
+box-shadow:0 8px 22px rgba(0,0,0,0.2);
+}
+
+/ MOBILE */
+
+@media(max-width:768px){
+
+nav{
+position:absolute;
+top:100%;
+right:0;
+width:100%;
+background:white;
+flex-direction:column;
+align-items:center;
+padding:30px 0;
+gap:20px;
+display:none;
+}
+
+nav.active{
+display:flex;
+}
+
+.hamburger{
+display:flex;
+}
+
+.content{
+padding:40px 20px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
 
-<img src="img/logo.png" class="logo">
+<img src="img/logo.png" alt="MLC" class="logo">
 
-<nav>
+<div class="hamburger" onclick="toggleMenu(this)">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<nav id="menu">
 <a href="index.html">Home</a>
 <a href="chi-siamo.html">Chi siamo</a>
 <a href="servizi.html">Servizi</a>
@@ -86,47 +323,93 @@ margin-top:60px;
 
 </header>
 
-<div class="container">
+<div class="content">
 
-<div class="service">
+<h1>Pacchetti Matrimonio</h1>
 
-<h2>Wedding Planner</h2>
+<table>
 
-<p>
-Organizziamo ogni dettaglio del matrimonio, aiutandoti a pianificare l'intero evento in modo chiaro e senza complicazioni.
-</p>
+<thead>
+<tr>
+<th>Servizio</th>
+<th>Base</th>
+<th>All Inclusive</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr><td>Inviti cartacei e telematici con reminder IBAN</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Fiori per la chiesa e bouquet</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Musica in chiesa (2 brani)</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Musica in chiesa (5 brani)</td><td class="no">–</td><td class="yes">✓</td></tr>
+<tr><td>Libretti messa</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Coni porta riso</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Ristorante, addobbi e fiori</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Musica al ristorante</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Baby sitting (3 ore)</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Baby sitting (5 ore)</td><td class="no">–</td><td class="yes">✓</td></tr>
+<tr><td>SIAE</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Fotografo con consegna digitale (chiavetta)</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Bomboniere</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Servizio di wedding planner</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Sito matrimonio per foto</td><td class="no">–</td><td class="yes">✓</td></tr>
+<tr><td>Open bar</td><td class="no">–</td><td class="yes">✓</td></tr>
+<tr><td>Video con drone</td><td class="no">–</td><td class="yes">✓</td></tr>
+<tr><td>Trucco e acconciatura sposa</td><td class="no">–</td><td class="yes">✓</td></tr>
+
+</tbody>
+
+</table>
+
+<div class="price-info">
+
+<div class="price-box">
+<h3>Pacchetto Base</h3>
+<p>A partire da 130 €<br>per 100 persone</p>
+</div>
+
+<div class="price-box">
+<h3>Pacchetto All Inclusive</h3>
+<p>A partire da 150 €<br>per 100 persone</p>
+</div>
 
 </div>
 
-<div class="service">
+<div class="extra">
 
-<h2>Location</h2>
+<h2>Servizi Extra su Richiesta</h2>
 
-<p>
-Selezioniamo location eleganti e accessibili che permettono di realizzare un matrimonio raffinato senza costi eccessivi.
-</p>
+<p>A prezzo variabile, da concordare in base alle esigenze e ai dettagli dell’evento.</p>
 
-</div>
+<ul>
 
-<div class="service">
+<li>Auto a noleggio con autista</li>
+<li>Dog sitter dedicato durante la giornata</li>
+<li>Ricerca abito sposa (anche con budget di 500 €)</li>
+<li>Evento pirotecnico per il taglio torta</li>
+<li>Angolo selfie con cornice e gadget</li>
+<li>Angolo foto Polaroid per ospiti</li>
+<li>Bomboniere enogastronomiche del territorio FVG</li>
 
-<h2>Fotografia e Musica</h2>
-
-<p>
-Collaboriamo con fotografi professionisti, musicisti e DJ per rendere ogni momento del matrimonio unico e memorabile.
-</p>
-
-</div>
-
-<a href="contatti.html" class="btn">Richiedi un preventivo</a>
+</ul>
 
 </div>
 
-<footer>
+<a class="download-btn" href="Tabella-MLC.pdf" download>Scarica ↓</a>
 
-© 2026 MLC – Matrimoni Low Cost
+</div>
 
-</footer>
+<script>
+
+function toggleMenu(el){
+
+el.classList.toggle("active");
+document.getElementById("menu").classList.toggle("active");
+
+}
+
+</script>
 
 </body>
 </html>

@@ -1,327 +1,343 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MLC – Matrimoni Low Cost</title>
 
-<meta name="description" content="MLC – Matrimoni Low Cost in Italia. Organizziamo matrimoni autentici, curati nei dettagli e accessibili.">
-<meta name="keywords" content="matrimoni low cost, wedding planner, matrimonio economico, MLC wedding">
+<meta name="description" content="MLC – Matrimoni Low Cost in Italia. Organizziamo matrimoni eleganti e accessibili senza sprechi.">
+<meta name="keywords" content="matrimoni low cost, matrimonio economico, wedding planner economico, matrimonio elegante economico">
 
 <style>
-/* RESET BASE */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(180deg,#fdf7f0,#f7efe4);
-  color: #333;
+
+body{
+margin:0;
+font-family: "Segoe UI", sans-serif;
+background:#f5efe6 url("https://images.unsplash.com/photo-1520854221256-17451cc331bf") center/cover fixed;
+color:#4a3f38;
 }
 
 /* HEADER */
-header {
-  background: rgba(243,230,210,0.85);
-  padding: 20px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+
+header{
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(8px);
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
 }
 
-.logo { height: 55px; }
-
-/* MENU DESKTOP */
-.nav-desktop a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: #555;
-  font-weight: 500;
-  position: relative;
+.logo{
+height:55px;
 }
 
-.nav-desktop a::after {
-  content:"";
-  position:absolute;
-  width:0;
-  height:2px;
-  bottom:-4px;
-  left:50%;
-  background:#c39a6b;
-  transition:.3s;
-}
+/* MENU */
 
-.nav-desktop a:hover::after {
-  width:100%;
-  left:0;
-}
-
-/* HAMBURGER */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  z-index: 120;
-}
-
-.hamburger span {
-  width: 26px;
-  height: 3px;
-  background: #333;
-  border-radius: 3px;
-  transition: 0.4s;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px,5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px,-6px);
-}
-
-/* OVERLAY */
-.overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 90;
-}
-
-/* MENU MOBILE */
-.nav-mobile {
-  position: fixed;
-  top: 90px;
-  left: 0;
-  width: 100%;
-  background: rgba(245,238,228,0.95);
-  backdrop-filter: blur(12px);
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px 0;
-  z-index: 100;
-}
-
-.nav-mobile a {
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #333;
-  padding: 12px 0;
-}
-
-.nav-mobile .btn {
-  margin-top: 20px;
+.nav-desktop a{
+margin-left:25px;
+text-decoration:none;
+color:#4a3f38;
+font-weight:500;
 }
 
 /* HERO */
-.hero {
-  background: url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-  padding: 160px 60px;
-  color: white;
-  position: relative;
-  text-align: center;
+
+.hero{
+padding:140px 20px;
+text-align:center;
+color:#4a3f38;
 }
 
-.hero::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,0.5);
+.hero h1{
+font-size:44px;
+margin-bottom:10px;
 }
 
-.hero * { position: relative; }
-
-.hero h1 {
-  font-size: 42px;
-  max-width: 700px;
-  margin: 0 auto 15px;
+.hero h2{
+font-weight:300;
+color:#b58d86;
+margin-top:0;
 }
 
-.hero p {
-  font-size: 18px;
-  opacity: 0.95;
+.hero p{
+max-width:600px;
+margin:auto;
+margin-top:20px;
+font-size:18px;
 }
 
-/* BOTTONI */
-.btn {
-  display:inline-block;
-  padding:14px 34px;
-  background:#c39a6b;
-  color:white;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:bold;
-  margin-top:30px;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 32px;
+background:#cbb29d;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+transition:.3s;
 }
 
-.btn:hover {
-  background:#a67c55;
-  transform: translateY(-3px) scale(1.03);
+.btn:hover{
+background:#b59c86;
 }
 
-/* SEZIONI */
-section {
-  padding: 80px 60px;
-  max-width: 1200px;
-  margin: 80px auto;
-  background: rgba(245,238,228,0.75);
-  border-radius: 24px;
-  backdrop-filter: blur(12px);
+/* PANEL */
+
+.panel{
+background:rgba(255,255,255,0.85);
+padding:60px;
+margin:60px auto;
+max-width:1000px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* TESTO CENTRALE */
-.center {
-  text-align: center;
+.panel h2{
+font-size:28px;
+font-style:italic;
 }
 
-.center p {
-  max-width: 800px;
-  margin: 0 auto;
+.panel p{
+margin-top:10px;
 }
 
-/* GRID */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap:35px;
+/* SERVICES */
+
+.services{
+max-width:1100px;
+margin:60px auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
-/* CARD */
-.card {
-  background:white;
-  padding:35px 30px;
-  border-radius:20px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.card{
+background:rgba(255,255,255,0.9);
+padding:40px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
 
-.card h3 {
-  margin-top: 0;
-  color:#c39a6b;
+.card h3{
+margin-top:0;
+color:#7c5e56;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+.card p{
+font-size:15px;
+}
+
+/* CHI SIAMO */
+
+.about{
+background:rgba(255,255,255,0.85);
+padding:60px;
+margin:60px auto;
+max-width:900px;
+border-radius:16px;
+text-align:center;
 }
 
 /* FOOTER */
-footer {
-  background:#2f2f2f;
-  color:#eee;
-  text-align:center;
-  padding:35px;
-  font-size: 14px;
+
+footer{
+background:rgba(0,0,0,0.75);
+color:white;
+padding:50px 20px;
 }
 
-/* RESPONSIVE */
-@media (max-width:768px) {
-  .nav-desktop { display:none; }
-  .hamburger { display:flex; }
-  .overlay.active { display:block; }
-  .nav-mobile.active { display:flex; }
-
-  header { padding:20px 30px; }
-  .hero { padding:120px 30px; }
-  .hero h1 { font-size:32px; }
-  section { padding:50px 25px; margin:60px 20px; }
+.footer-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
 }
+
+footer h4{
+margin-top:0;
+}
+
+footer ul{
+list-style:none;
+padding:0;
+}
+
+footer li{
+margin-bottom:8px;
+}
+
+footer a{
+color:white;
+text-decoration:none;
+}
+
+.copy{
+text-align:center;
+margin-top:30px;
+opacity:0.7;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+padding:20px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.panel{
+padding:40px 25px;
+}
+
+.about{
+padding:40px 25px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <img src="img/logo.png" class="logo" alt="MLC">
 
-  <nav class="nav-desktop">
-    <a href="index.html">Home</a>
-    <a href="chi-siamo.html">Chi siamo</a>
-    <a href="servizi.html">Servizi</a>
-    <a href="contatti.html">Contatti</a>
-  </nav>
+<img src="img/logo.png" class="logo" alt="MLC">
 
-  <div class="hamburger" onclick="toggleMenu(this)">
-    <span></span><span></span><span></span>
-  </div>
-</header>
-
-<div class="overlay" onclick="closeMenu()"></div>
-
-<nav class="nav-mobile" id="navMobile">
-  <a href="index.html">Home</a>
-  <a href="chi-siamo.html">Chi siamo</a>
-  <a href="servizi.html">Servizi</a>
-  <a href="contatti.html">Contatti</a>
-  <a href="contatti.html" class="btn">Preventivo gratuito</a>
+<nav class="nav-desktop">
+<a href="index.html">Home</a>
+<a href="chi-siamo.html">Chi siamo</a>
+<a href="servizi.html">Servizi</a>
+<a href="contatti.html">Contatti</a>
 </nav>
 
+</header>
+
 <section class="hero">
-  <h1>Il tuo matrimonio, semplice e accessibile</h1>
-  <p>Curato nei dettagli, senza sprechi e senza costi inutili.</p>
-  <a href="contatti.html" class="btn">Richiedi preventivo</a>
+
+<h1>Il matrimonio dei tuoi sogni</h1>
+<h2>senza spendere una fortuna</h2>
+
+<p>
+Organizziamo matrimoni eleganti a costi ridotti,
+per rendere il tuo giorno speciale accessibile
+senza rinunciare alla qualità.
+</p>
+
+<a href="servizi.html" class="btn">Scopri come funziona</a>
+
 </section>
 
-<section class="center">
-  <h2>MLC – Matrimoni Low Cost</h2>
-  <p>
-    Organizziamo matrimoni autentici e ben curati, eliminando tutto ciò che non serve davvero.
-    Il nostro obiettivo è offrirti un matrimonio bello, equilibrato e accessibile.
-  </p>
-  <a href="chi-siamo.html" class="btn">Scopri chi siamo</a>
-</section>
+<section class="panel">
 
-<section class="center">
-  <h2>Perché scegliere un matrimonio low cost</h2>
-  <p>
-    Un matrimonio low cost non significa rinunciare alla qualità, ma scegliere con attenzione.
-    Riduciamo gli sprechi, semplifichiamo l’organizzazione e proponiamo soluzioni chiare e trasparenti.
-  </p>
-  <a href="servizi.html" class="btn">Come lavoriamo</a>
+<h2>“Il matrimonio perfetto non dipende dal budget”</h2>
+
+<p>
+Con le giuste scelte e fornitori esperti
+organizziamo il tuo matrimonio curato nei dettagli
+senza spese eccessive.
+</p>
+
+<a href="contatti.html" class="btn">Contattaci</a>
+
 </section>
 
 <section class="services">
-  <div class="card">
-    <h3>Wedding Planner</h3>
-    <p>Organizziamo ogni dettaglio del tuo matrimonio, dal tableau ai fiori, con un pacchetto chiaro e senza sorprese.</p>
-  </div>
-  <div class="card">
-    <h3>Location</h3>
-    <p>Selezioniamo location belle e accessibili in Friuli, ideali per matrimoni eleganti e ben organizzati.</p>
-  </div>
-  <div class="card">
-    <h3>Fotografia & Musica</h3>
-    <p>Professionisti affidabili per raccontare e accompagnare ogni momento importante del tuo giorno speciale.</p>
-  </div>
+
+<div class="card">
+<h3>Risparmio intelligente</h3>
+<p>
+Riduciamo i costi fino al 60% grazie
+alla selezione di fornitori affidabili
+e soluzioni organizzative più efficienti.
+</p>
+</div>
+
+<div class="card">
+<h3>Matrimonio elegante</h3>
+<p>
+Ti aiutiamo a realizzare un matrimonio
+raffinato e curato nei dettagli
+senza spendere una fortuna.
+</p>
+</div>
+
+<div class="card">
+<h3>Organizzazione completa</h3>
+<p>
+Gestiamo ogni fase del matrimonio,
+dalla scelta della location
+fino alla coordinazione dell'evento.
+</p>
+</div>
+
+</section>
+
+<section class="about">
+
+<h2>MLC – Matrimoni Low Cost</h2>
+
+<p>
+MLC nasce con l'idea di rendere il matrimonio
+più accessibile, eliminando gli sprechi
+e concentrandosi su ciò che conta davvero.
+</p>
+
+<a href="chi-siamo.html" class="btn">Scopri di più</a>
+
 </section>
 
 <footer>
-  © 2026 MLC – Matrimoni Low Cost
+
+<div class="footer-grid">
+
+<div>
+<h4>Matrimoni Low Cost</h4>
+<ul>
+<li>Risparmio intelligente</li>
+<li>Matrimonio elegante</li>
+<li>Organizzazione completa</li>
+</ul>
+</div>
+
+<div>
+<h4>Link utili</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="servizi.html">Servizi</a></li>
+<li><a href="chi-siamo.html">Chi siamo</a></li>
+<li><a href="contatti.html">Contatti</a></li>
+</ul>
+</div>
+
+<div>
+<h4>Contatti</h4>
+<ul>
+<li>+39 123 456 7890</li>
+<li>info@mlc-matrimoni.it</li>
+<li>Lun-Sab 09:00 - 19:00</li>
+</ul>
+</div>
+
+</div>
+
+<div class="copy">
+© 2026 MLC – Matrimoni Low Cost
+</div>
+
 </footer>
-
-<script>
-function toggleMenu(btn) {
-  btn.classList.toggle("active");
-  document.getElementById("navMobile").classList.toggle("active");
-  document.querySelector(".overlay").classList.toggle("active");
-}
-
-function closeMenu() {
-  document.querySelector(".hamburger").classList.remove("active");
-  document.getElementById("navMobile").classList.remove("active");
-  document.querySelector(".overlay").classList.remove("active");
-}
-</script>
 
 </body>
 </html>

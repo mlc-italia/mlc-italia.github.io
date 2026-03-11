@@ -1,5 +1,5 @@
-id="74820"}
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
 
@@ -8,7 +8,9 @@ id="74820"}
 
 <title>Contatti – MLC</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Contatta MLC per organizzare il tuo matrimonio elegante e accessibile.">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,7 +19,10 @@ margin:0;
 font-family:'Inter',sans-serif;
 background:#f6f1ea;
 color:#2f2f2f;
+line-height:1.6;
 }
+
+/* HEADER */
 
 header{
 background:white;
@@ -25,37 +30,86 @@ padding:20px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 4px 12px rgba(0,0,0,0.06);
+box-shadow:0 4px 10px rgba(0,0,0,0.06);
+position:sticky;
+top:0;
+z-index:10;
 }
 
-.logo{height:55px}
+.logo{
+height:55px;
+}
 
-.content{
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#555;
+font-weight:500;
+}
+
+nav a:hover{
+color:#b89663;
+}
+
+/* SEZIONE */
+
+.section{
 max-width:900px;
-margin:80px auto;
-padding:60px 40px;
-background:white;
-border-radius:16px;
-box-shadow:0 12px 40px rgba(0,0,0,0.08);
+margin:100px auto;
+padding:0 30px;
 text-align:center;
 }
 
-h1{
+.section h1{
 font-family:'Playfair Display',serif;
 color:#b89663;
+font-size:40px;
 margin-bottom:20px;
 }
 
-p{
-font-size:17px;
-margin-bottom:20px;
+.section p{
+font-size:18px;
+margin-bottom:30px;
 }
+
+/* BOX CONTATTI */
 
 .contact-box{
-background:#faf7f2;
+background:white;
+padding:35px;
+border-radius:14px;
+box-shadow:0 10px 28px rgba(0,0,0,0.08);
+max-width:420px;
+margin:40px auto;
+}
+
+.contact-box p{
+font-size:18px;
+margin:12px 0;
+}
+
+/* FOOTER */
+
+footer{
+background:#2f2f2f;
+color:white;
+text-align:center;
 padding:30px;
-border-radius:12px;
-margin-top:30px;
+margin-top:80px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+padding:20px;
+}
+
+.section h1{
+font-size:32px;
+}
+
 }
 
 </style>
@@ -66,7 +120,7 @@ margin-top:30px;
 
 <header>
 
-<img src="img/logo.png" class="logo">
+<img src="img/logo.png" class="logo" alt="MLC">
 
 <nav>
 <a href="index.html">Home</a>
@@ -77,23 +131,31 @@ margin-top:30px;
 
 </header>
 
-<div class="content">
+<section class="section">
 
 <h1>Contatti</h1>
 
 <p>
-Per informazioni sui servizi o per organizzare il tuo matrimonio,
+Per informazioni sui nostri servizi o per iniziare
+a organizzare il tuo matrimonio,
 contattaci direttamente.
 </p>
 
 <div class="contact-box">
 
-<p><strong>Email:</strong> info@mlc-matrimoni.it</p>
+<p><strong>Email</strong><br>info@mlc-matrimoni.it</p>
 
-<p><strong>Telefono:</strong> +39 XXX XXX XXXX</p>
-
-</div>
+<p><strong>Telefono</strong><br>+39 XXX XXX XXXX</p>
 
 </div>
 
-</bo
+</section>
+
+<footer>
+
+<p>© 2026 MLC – Matrimoni Low Cost</p>
+
+</footer>
+
+</body>
+</html>

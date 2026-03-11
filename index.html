@@ -174,14 +174,6 @@ nav a:hover{
   background:#9f7d4f;
 }
 
-/* Messaggio conferma */
-.form-message{
-  text-align:center;
-  color:green;
-  font-weight:600;
-  margin-top:10px;
-}
-
 /* FOOTER */
 footer{
   background:#2f2f2f;
@@ -252,7 +244,11 @@ footer{
 <section class="section">
   <h2>Contattaci</h2>
 
-  <form action="processa-form.php" method="POST" class="contact-form">
+  <!-- FORM SUBMIT -->
+  <form action="https://formsubmit.co/mlc.matrimoni@gmail.com" method="POST" class="contact-form">
+    <input type="hidden" name="_next" value="grazie.html">
+    <input type="hidden" name="_captcha" value="false">
+
     <input type="text" name="name" placeholder="Nome e cognome" required>
     <input type="email" name="email" placeholder="Email" required>
     <input type="tel" name="phone" placeholder="Telefono">
@@ -260,16 +256,14 @@ footer{
     <button type="submit">Invia messaggio</button>
   </form>
 
-  <div class="form-message" id="form-message"></div>
 </section>
 
 <footer>
   <div style="max-width:1100px;margin:0 auto;padding:30px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;color:white;font-family:'Inter',sans-serif;">
-    
     <!-- Contatti -->
     <div style="flex:1 1 250px;">
       <h3 style="color:#b89663;margin-bottom:10px;">Contatti</h3>
-      <p>Email: <a href="mailto:matrimoniodrive@gmail.com" style="color:white;text-decoration:underline;">matrimoniodrive@gmail.com</a></p>
+      <p>Email: <a href="mailto:mlc.matrimoni@gmail.com" style="color:white;text-decoration:underline;">mlc.matrimoni@gmail.com</a></p>
       <p>Telefono: <a href="tel:+390123456789" style="color:white;text-decoration:underline;">+39 012 345 6789</a></p>
       <p>Indirizzo: Via Esempio 123, Roma, Italia</p>
     </div>
@@ -292,7 +286,6 @@ footer{
       <a href="#" style="color:white;text-decoration:none;margin-right:10px;">Instagram</a>
       <a href="#" style="color:white;text-decoration:none;">Pinterest</a>
     </div>
-
   </div>
 
   <div style="text-align:center;padding-top:20px;color:#ccc;font-size:14px;">

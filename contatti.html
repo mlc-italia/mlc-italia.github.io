@@ -8,8 +8,6 @@
 
 <title>Contatti – MLC</title>
 
-<meta name="description" content="Contatta MLC per organizzare il tuo matrimonio elegante e accessibile.">
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -51,7 +49,7 @@ nav a:hover{
 color:#b89663;
 }
 
-/* SEZIONE */
+/* SECTION */
 
 .section{
 max-width:900px;
@@ -72,7 +70,7 @@ font-size:18px;
 margin-bottom:30px;
 }
 
-/* BOX CONTATTI */
+/* CONTACT BOX */
 
 .contact-box{
 background:white;
@@ -83,9 +81,42 @@ max-width:420px;
 margin:40px auto;
 }
 
-.contact-box p{
-font-size:18px;
-margin:12px 0;
+/* FORM */
+
+.contact-form{
+max-width:600px;
+margin:40px auto 0;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:14px;
+border-radius:8px;
+border:1px solid #ddd;
+font-family:'Inter',sans-serif;
+font-size:15px;
+}
+
+.contact-form textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.contact-form button{
+background:#b89663;
+color:white;
+border:none;
+padding:14px;
+border-radius:40px;
+font-weight:600;
+cursor:pointer;
+}
+
+.contact-form button:hover{
+background:#9f7d4f;
 }
 
 /* FOOTER */
@@ -98,20 +129,6 @@ padding:30px;
 margin-top:80px;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-header{
-padding:20px;
-}
-
-.section h1{
-font-size:32px;
-}
-
-}
-
 </style>
 
 </head>
@@ -120,7 +137,7 @@ font-size:32px;
 
 <header>
 
-<img src="img/logo.png" class="logo" alt="MLC">
+<img src="img/logo.png" class="logo">
 
 <nav>
 <a href="index.html">Home</a>
@@ -136,8 +153,7 @@ font-size:32px;
 <h1>Contatti</h1>
 
 <p>
-Per informazioni sui nostri servizi o per iniziare
-a organizzare il tuo matrimonio,
+Per informazioni sui servizi o per organizzare il tuo matrimonio,
 contattaci direttamente.
 </p>
 
@@ -148,6 +164,20 @@ contattaci direttamente.
 <p><strong>Telefono</strong><br>+39 XXX XXX XXXX</p>
 
 </div>
+
+<form action="https://formsubmit.co/info@mlc-matrimoni.it" method="POST" class="contact-form">
+
+<input type="text" name="name" placeholder="Nome e cognome" required>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<input type="tel" name="phone" placeholder="Telefono">
+
+<textarea name="message" placeholder="Scrivi il tuo messaggio..." required></textarea>
+
+<button type="submit">Invia messaggio</button>
+
+</form>
 
 </section>
 

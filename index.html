@@ -1,199 +1,195 @@
 <!DOCTYPE html>
-
 <html lang="it">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MLC – Matrimoni Low Cost</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 body{
-margin:0;
-font-family:'Inter',sans-serif;
-background:#f6f1ea;
-color:#2f2f2f;
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#f6f1ea;
+  color:#2f2f2f;
 }
 
 /* HEADER */
-
 header{
-background:white;
-padding:20px 60px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.06);
-position:sticky;
-top:0;
-z-index:10;
+  background:white;
+  padding:20px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.06);
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
 .logo{
-height:55px;
+  height:55px;
 }
 
 nav a{
-margin-left:25px;
-text-decoration:none;
-color:#555;
-font-weight:500;
+  margin-left:25px;
+  text-decoration:none;
+  color:#555;
+  font-weight:500;
 }
 
 nav a:hover{
-color:#b89663;
+  color:#b89663;
 }
 
 /* HERO */
-
 .hero{
-height:70vh;
-background:url("https://images.unsplash.com/photo-1519741497674-611481863552") center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
+  height:70vh;
+  background:url("https://images.unsplash.com/photo-1519741497674-611481863552") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
 }
 
 .hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.35);
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
 }
 
 .hero-content{
-position:relative;
-color:white;
-max-width:700px;
-padding:20px;
+  position:relative;
+  color:white;
+  max-width:700px;
+  padding:20px;
 }
 
 .hero h1{
-font-family:'Playfair Display',serif;
-font-size:48px;
-margin-bottom:20px;
+  font-family:'Playfair Display',serif;
+  font-size:48px;
+  margin-bottom:20px;
 }
 
 .hero p{
-font-size:20px;
-margin-bottom:30px;
+  font-size:20px;
+  margin-bottom:30px;
 }
 
 .btn{
-background:#b89663;
-color:white;
-padding:14px 28px;
-border-radius:40px;
-text-decoration:none;
-font-weight:600;
+  background:#b89663;
+  color:white;
+  padding:14px 28px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:600;
 }
 
 /* SECTIONS */
-
 .section{
-max-width:1100px;
-margin:80px auto;
-padding:0 30px;
+  max-width:1100px;
+  margin:80px auto;
+  padding:0 30px;
 }
 
 .section h2{
-font-family:'Playfair Display',serif;
-text-align:center;
-color:#b89663;
-margin-bottom:40px;
+  font-family:'Playfair Display',serif;
+  text-align:center;
+  color:#b89663;
+  margin-bottom:40px;
 }
 
 /* FEATURES */
-
 .features{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
 }
 
 .feature{
-flex:1 1 260px;
-max-width:320px;
-background:white;
-padding:30px;
-border-radius:14px;
-text-align:center;
-box-shadow:0 10px 28px rgba(0,0,0,0.08);
+  flex:1 1 260px;
+  max-width:320px;
+  background:white;
+  padding:30px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 10px 28px rgba(0,0,0,0.08);
 }
 
 /* SERVICES */
-
 .services{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
 }
 
 .service{
-flex:1 1 260px;
-max-width:320px;
-background:#faf7f2;
-padding:25px;
-border-radius:12px;
-text-align:center;
+  flex:1 1 260px;
+  max-width:320px;
+  background:#faf7f2;
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
 }
 
 /* FORM */
-
 .contact-form{
-max-width:600px;
-margin:40px auto 0;
-display:flex;
-flex-direction:column;
-gap:15px;
+  max-width:600px;
+  margin:40px auto 0;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
 }
 
 .contact-form input,
 .contact-form textarea{
-padding:14px;
-border-radius:8px;
-border:1px solid #ddd;
-font-family:'Inter',sans-serif;
-font-size:15px;
+  padding:14px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  font-family:'Inter',sans-serif;
+  font-size:15px;
 }
 
 .contact-form textarea{
-min-height:120px;
-resize:vertical;
+  min-height:120px;
+  resize:vertical;
 }
 
 .contact-form button{
-background:#b89663;
-color:white;
-border:none;
-padding:14px;
-border-radius:40px;
-font-weight:600;
-cursor:pointer;
+  background:#b89663;
+  color:white;
+  border:none;
+  padding:14px;
+  border-radius:40px;
+  font-weight:600;
+  cursor:pointer;
 }
 
 .contact-form button:hover{
-background:#9f7d4f;
+  background:#9f7d4f;
+}
+
+/* Messaggio conferma */
+.form-message{
+  text-align:center;
+  color:green;
+  font-weight:600;
+  margin-top:10px;
 }
 
 /* FOOTER */
-
 footer{
-background:#2f2f2f;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:80px;
+  background:#2f2f2f;
+  color:white;
+  text-align:center;
+  padding:30px;
+  margin-top:80px;
 }
-
 </style>
 
 </head>
@@ -201,110 +197,106 @@ margin-top:80px;
 <body>
 
 <header>
-
-<img src="img/logo.png" class="logo">
-
-<nav>
-<a href="index.html">Home</a>
-<a href="chi-siamo.html">Chi siamo</a>
-<a href="servizi.html">Servizi</a>
-<a href="contatti.html">Contatti</a>
-</nav>
-
+  <img src="img/logo.png" class="logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="contatti.html">Contatti</a>
+  </nav>
 </header>
 
 <section class="hero">
-
-<div class="hero-content">
-
-<h1>Il tuo matrimonio elegante e accessibile</h1>
-
-<p>
-Organizziamo matrimoni curati nei dettagli mantenendo
-un budget accessibile e trasparente.
-</p>
-
-<a class="btn" href="servizi.html">Scopri i servizi</a>
-
-</div>
-
+  <div class="hero-content">
+    <h1>Il tuo matrimonio elegante e accessibile</h1>
+    <p>Organizziamo matrimoni curati nei dettagli mantenendo un budget accessibile e trasparente.</p>
+    <a class="btn" href="servizi.html">Scopri i servizi</a>
+  </div>
 </section>
 
 <section class="section">
-
-<h2>Perché scegliere MLC</h2>
-
-<div class="features">
-
-<div class="feature">
-<h3>Prezzi accessibili</h3>
-<p>Pacchetti chiari per matrimoni eleganti senza costi esagerati.</p>
-</div>
-
-<div class="feature">
-<h3>Organizzazione completa</h3>
-<p>Dalla chiesa alla location fino alla musica e alla fotografia.</p>
-</div>
-
-<div class="feature">
-<h3>Esperienza</h3>
-<p>Ogni matrimonio viene organizzato con attenzione ai dettagli.</p>
-</div>
-
-</div>
-
+  <h2>Perché scegliere MLC</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>Prezzi accessibili</h3>
+      <p>Pacchetti chiari per matrimoni eleganti senza costi esagerati.</p>
+    </div>
+    <div class="feature">
+      <h3>Organizzazione completa</h3>
+      <p>Dalla chiesa alla location fino alla musica e alla fotografia.</p>
+    </div>
+    <div class="feature">
+      <h3>Esperienza</h3>
+      <p>Ogni matrimonio viene organizzato con attenzione ai dettagli.</p>
+    </div>
+  </div>
 </section>
 
 <section class="section">
-
-<h2>I nostri servizi</h2>
-
-<div class="services">
-
-<div class="service">
-<h3>Wedding Planner</h3>
-<p>Supporto completo nell'organizzazione del matrimonio.</p>
-</div>
-
-<div class="service">
-<h3>Location</h3>
-<p>Selezione di ristoranti e location eleganti.</p>
-</div>
-
-<div class="service">
-<h3>Fotografia e musica</h3>
-<p>Professionisti per rendere il giorno indimenticabile.</p>
-</div>
-
-</div>
-
+  <h2>I nostri servizi</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Wedding Planner</h3>
+      <p>Supporto completo nell'organizzazione del matrimonio.</p>
+    </div>
+    <div class="service">
+      <h3>Location</h3>
+      <p>Selezione di ristoranti e location eleganti.</p>
+    </div>
+    <div class="service">
+      <h3>Fotografia e musica</h3>
+      <p>Professionisti per rendere il giorno indimenticabile.</p>
+    </div>
+  </div>
 </section>
 
 <section class="section">
+  <h2>Contattaci</h2>
 
-<h2>Contattaci</h2>
+  <form action="https://formsubmit.co/matrimoniodrive@gmail.com" method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="Nome e cognome" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="phone" placeholder="Telefono">
+    <textarea name="message" placeholder="Scrivi il tuo messaggio..." required></textarea>
+    <button type="submit">Invia messaggio</button>
+  </form>
 
-<form action="https://formsubmit.co/info@mlc-matrimoni.it" method="POST" class="contact-form">
-
-<input type="text" name="name" placeholder="Nome e cognome" required>
-
-<input type="email" name="email" placeholder="Email" required>
-
-<input type="tel" name="phone" placeholder="Telefono">
-
-<textarea name="message" placeholder="Scrivi il tuo messaggio..." required></textarea>
-
-<button type="submit">Invia messaggio</button>
-
-</form>
-
+  <div class="form-message" id="form-message"></div>
 </section>
 
 <footer>
-
-<p>© 2026 MLC – Matrimoni Low Cost</p>
-
+  <p>© 2026 MLC – Matrimoni Low Cost</p>
 </footer>
+
+<script>
+const form = document.querySelector('.contact-form');
+const messageBox = document.getElementById('form-message');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault(); // blocca invio normale
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      messageBox.textContent = "Messaggio inviato con successo!";
+      messageBox.style.color = "green";
+      form.reset();
+    } else {
+      messageBox.textContent = "Si è verificato un errore durante l'invio.";
+      messageBox.style.color = "red";
+    }
+  } catch (error) {
+    messageBox.textContent = "Errore di rete, riprova più tardi.";
+    messageBox.style.color = "red";
+  }
+});
+</script>
 
 </body>
 </html>

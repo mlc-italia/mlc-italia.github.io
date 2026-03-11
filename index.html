@@ -106,18 +106,21 @@ padding:0 30px;
 font-family:'Playfair Display',serif;
 text-align:center;
 color:#b89663;
-margin-bottom:30px;
+margin-bottom:40px;
 }
 
 /* FEATURES */
 
 .features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 gap:30px;
 }
 
 .feature{
+flex:1 1 260px;
+max-width:320px;
 background:white;
 padding:30px;
 border-radius:14px;
@@ -133,16 +136,24 @@ color:#b89663;
 /* SERVICES */
 
 .services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 gap:30px;
 }
 
 .service{
+flex:1 1 260px;
+max-width:320px;
 background:#faf7f2;
 padding:25px;
 border-radius:12px;
 text-align:center;
+}
+
+.service h3{
+font-family:'Playfair Display',serif;
+color:#b89663;
 }
 
 /* FOOTER */
@@ -177,7 +188,7 @@ font-size:34px;
 
 <header>
 
-<img src="img/logo.png" class="logo">
+<img src="img/logo.png" class="logo" alt="MLC">
 
 <nav>
 <a href="index.html">Home</a>
@@ -187,6 +198,8 @@ font-size:34px;
 </nav>
 
 </header>
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -204,6 +217,8 @@ un budget accessibile e trasparente.
 </div>
 
 </section>
+
+<!-- PERCHÉ SCEGLIERE MLC -->
 
 <section class="section">
 
@@ -229,6 +244,8 @@ un budget accessibile e trasparente.
 </div>
 
 </section>
+
+<!-- SERVIZI -->
 
 <section class="section">
 

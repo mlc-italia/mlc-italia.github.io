@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
 
@@ -7,16 +8,11 @@
 
 <title>Servizi – MLC</title>
 
-<!-- SEO -->
-<meta name="description" content="Scopri i pacchetti e servizi MLC per matrimoni low cost in Italia. Wedding planner, location, decorazioni, fotografo, musica, inviti, bomboniere e molto altro.">
-<meta name="keywords" content="servizi matrimonio, pacchetti matrimonio, matrimoni low cost, wedding planner, location matrimonio, decorazioni matrimonio, fotografo matrimonio, DJ matrimonio, musica matrimonio, inviti personalizzati, bomboniere, trucco sposa, acconciatura sposa, MLC, Friuli">
-<meta name="author" content="MLC – Stefania">
+<meta name="description" content="Scopri i pacchetti e servizi MLC per matrimoni eleganti e accessibili.">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* RESET /
 
 body{
 margin:0;
@@ -26,115 +22,52 @@ color:#2f2f2f;
 line-height:1.6;
 }
 
-/ HEADER /
+/* HEADER */
 
 header{
-background:rgba(255,255,255,0.9);
+background:white;
 padding:20px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.06);
 position:sticky;
 top:0;
 z-index:10;
-box-shadow:0 4px 12px rgba(0,0,0,0.06);
-backdrop-filter:blur(8px);
 }
 
 .logo{
 height:55px;
 }
 
-/ NAV /
-
 nav a{
 margin-left:25px;
 text-decoration:none;
 color:#555;
 font-weight:500;
-position:relative;
-transition:0.3s;
-}
-
-nav a::after{
-content:'';
-display:block;
-height:2px;
-width:0;
-background:#b89663;
-transition:0.3s;
-margin:auto;
-position:absolute;
-bottom:-4px;
-left:0;
-right:0;
-}
-
-nav a:hover::after{
-width:100%;
 }
 
 nav a:hover{
 color:#b89663;
-transform:translateY(-2px);
 }
 
-/ HAMBURGER /
+/* SEZIONE */
 
-.hamburger{
-display:none;
-flex-direction:column;
-gap:6px;
-cursor:pointer;
-}
-
-.hamburger span{
-width:26px;
-height:3px;
-background:#555;
-border-radius:3px;
-transition:0.4s;
-}
-
-.hamburger.active span:nth-child(1){
-transform:rotate(45deg) translate(5px,5px);
-}
-
-.hamburger.active span:nth-child(2){
-opacity:0;
-}
-
-.hamburger.active span:nth-child(3){
-transform:rotate(-45deg) translate(6px,-6px);
-}
-
-/ CONTENT /
-
-.content{
+.section{
 max-width:1100px;
-margin:70px auto;
-padding:60px 40px;
-background:white;
-border-radius:16px;
-box-shadow:0 12px 40px rgba(0,0,0,0.08);
+margin:100px auto;
+padding:0 30px;
 }
 
-h1{
+.section h1{
 font-family:'Playfair Display',serif;
 text-align:center;
-font-size:34px;
+font-size:40px;
 color:#b89663;
 margin-bottom:40px;
 }
 
-.extra h2{
-font-family:'Playfair Display',serif;
-text-align:center;
-color:#b89663;
-margin-bottom:20px;
-}
-
-/ TABELLA /
+/* TABELLA */
 
 table{
 width:100%;
@@ -183,7 +116,7 @@ font-weight:700;
 font-size:18px;
 }
 
-/ PREZZI /
+/* PREZZI */
 
 .price-info{
 display:flex;
@@ -199,13 +132,7 @@ border-radius:14px;
 padding:25px 35px;
 text-align:center;
 box-shadow:0 10px 28px rgba(0,0,0,0.08);
-transition:0.3s;
 border:1px solid #eee;
-}
-
-.price-box:hover{
-transform:translateY(-6px);
-box-shadow:0 14px 35px rgba(0,0,0,0.12);
 }
 
 .price-box h3{
@@ -214,13 +141,20 @@ color:#b89663;
 margin-bottom:10px;
 }
 
-/ EXTRA /
+/* EXTRA */
 
 .extra{
 margin-top:60px;
 padding:30px;
 border-radius:14px;
 background:#faf7f2;
+}
+
+.extra h2{
+font-family:'Playfair Display',serif;
+text-align:center;
+color:#b89663;
+margin-bottom:20px;
 }
 
 .extra p{
@@ -245,7 +179,7 @@ color:#2e8b57;
 margin-right:8px;
 }
 
-/ DOWNLOAD /
+/* DOWNLOAD */
 
 .download-btn{
 display:block;
@@ -258,42 +192,32 @@ border-radius:40px;
 text-decoration:none;
 font-weight:600;
 text-align:center;
-transition:0.3s;
 }
 
 .download-btn:hover{
 background:#9f7d4f;
-transform:translateY(-3px);
-box-shadow:0 8px 22px rgba(0,0,0,0.2);
 }
 
-/ MOBILE */
+/* FOOTER */
+
+footer{
+background:#2f2f2f;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:80px;
+}
+
+/* MOBILE */
 
 @media(max-width:768px){
 
-nav{
-position:absolute;
-top:100%;
-right:0;
-width:100%;
-background:white;
-flex-direction:column;
-align-items:center;
-padding:30px 0;
-gap:20px;
-display:none;
+header{
+padding:20px;
 }
 
-nav.active{
-display:flex;
-}
-
-.hamburger{
-display:flex;
-}
-
-.content{
-padding:40px 20px;
+.section h1{
+font-size:32px;
 }
 
 }
@@ -306,15 +230,9 @@ padding:40px 20px;
 
 <header>
 
-<img src="img/logo.png" alt="MLC" class="logo">
+<img src="img/logo.png" class="logo" alt="MLC">
 
-<div class="hamburger" onclick="toggleMenu(this)">
-<span></span>
-<span></span>
-<span></span>
-</div>
-
-<nav id="menu">
+<nav>
 <a href="index.html">Home</a>
 <a href="chi-siamo.html">Chi siamo</a>
 <a href="servizi.html">Servizi</a>
@@ -323,7 +241,7 @@ padding:40px 20px;
 
 </header>
 
-<div class="content">
+<section class="section">
 
 <h1>Pacchetti Matrimonio</h1>
 
@@ -380,7 +298,7 @@ padding:40px 20px;
 
 <h2>Servizi Extra su Richiesta</h2>
 
-<p>A prezzo variabile, da concordare in base alle esigenze e ai dettagli dell’evento.</p>
+<p>A prezzo variabile, da concordare in base alle esigenze dell’evento.</p>
 
 <ul>
 
@@ -390,26 +308,21 @@ padding:40px 20px;
 <li>Evento pirotecnico per il taglio torta</li>
 <li>Angolo selfie con cornice e gadget</li>
 <li>Angolo foto Polaroid per ospiti</li>
-<li>Bomboniere enogastronomiche del territorio FVG</li>
+<li>Bomboniere enogastronomiche del territorio</li>
 
 </ul>
 
 </div>
 
-<a class="download-btn" href="Tabella-MLC.pdf" download>Scarica ↓</a>
+<a class="download-btn" href="Tabella-MLC.pdf" download>Scarica la tabella</a>
 
-</div>
+</section>
 
-<script>
+<footer>
 
-function toggleMenu(el){
+<p>© 2026 MLC – Matrimoni Low Cost</p>
 
-el.classList.toggle("active");
-document.getElementById("menu").classList.toggle("active");
-
-}
-
-</script>
+</footer>
 
 </body>
 </html>

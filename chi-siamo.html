@@ -1,5 +1,5 @@
-="63591"}
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
 
@@ -10,7 +10,7 @@
 
 <meta name="description" content="Scopri la filosofia di MLC e la missione di rendere i matrimoni eleganti e accessibili.">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,7 +19,10 @@ margin:0;
 font-family:'Inter',sans-serif;
 background:#f6f1ea;
 color:#2f2f2f;
+line-height:1.6;
 }
+
+/* HEADER */
 
 header{
 background:white;
@@ -27,37 +30,70 @@ padding:20px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 4px 12px rgba(0,0,0,0.06);
+box-shadow:0 4px 10px rgba(0,0,0,0.06);
+position:sticky;
+top:0;
+z-index:10;
 }
 
-.logo{height:55px}
+.logo{
+height:55px;
+}
 
 nav a{
 margin-left:25px;
 text-decoration:none;
 color:#555;
+font-weight:500;
 }
 
-.content{
-max-width:1000px;
-margin:80px auto;
-padding:60px 40px;
-background:white;
-border-radius:16px;
-box-shadow:0 12px 40px rgba(0,0,0,0.08);
+nav a:hover{
+color:#b89663;
 }
 
-h1{
+/* SEZIONE */
+
+.section{
+max-width:900px;
+margin:100px auto;
+padding:0 30px;
+}
+
+.section h1{
 font-family:'Playfair Display',serif;
 color:#b89663;
 text-align:center;
-margin-bottom:30px;
+font-size:40px;
+margin-bottom:40px;
 }
 
-p{
-font-size:17px;
-line-height:1.7;
-margin-bottom:20px;
+.section p{
+font-size:18px;
+margin-bottom:22px;
+}
+
+/* FOOTER */
+
+footer{
+background:#2f2f2f;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:80px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+padding:20px;
+}
+
+.section h1{
+font-size:32px;
+}
+
 }
 
 </style>
@@ -68,7 +104,7 @@ margin-bottom:20px;
 
 <header>
 
-<img src="img/logo.png" class="logo">
+<img src="img/logo.png" class="logo" alt="MLC">
 
 <nav>
 <a href="index.html">Home</a>
@@ -79,7 +115,7 @@ margin-bottom:20px;
 
 </header>
 
-<div class="content">
+<section class="section">
 
 <h1>Chi siamo</h1>
 
@@ -89,17 +125,25 @@ senza rinunciare alla qualità e alla cura dei dettagli.
 </p>
 
 <p>
-L'obiettivo è offrire un servizio completo di organizzazione matrimoni,
+Il nostro obiettivo è offrire un servizio completo di organizzazione matrimoni,
 collaborando con professionisti del settore per garantire un evento elegante,
 ben organizzato e memorabile.
 </p>
 
 <p>
-Crediamo che ogni matrimonio debba essere unico e speciale,
-per questo ogni evento viene progettato insieme agli sposi,
-tenendo conto delle loro esigenze e dei loro desideri.
+Crediamo che ogni matrimonio debba essere unico e speciale.
+Per questo ogni evento viene progettato insieme agli sposi,
+tenendo conto delle loro esigenze, dei loro desideri
+e dello stile che vogliono dare al loro giorno più importante.
 </p>
 
-</div>
+</section>
 
-</body
+<footer>
+
+<p>© 2026 MLC – Matrimoni Low Cost</p>
+
+</footer>
+
+</body>
+</html>

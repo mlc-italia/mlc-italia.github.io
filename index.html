@@ -194,6 +194,14 @@ nav a:hover{
   background:#9f7d4f;
 }
 
+/* Success message */
+#successMessage{
+  text-align:center;
+  color:#b89663;
+  margin-top:20px;
+  font-weight:600;
+}
+
 /* FOOTER */
 footer{
   background:#2f2f2f;
@@ -292,17 +300,19 @@ footer{
 <section class="section">
   <h2>Contattaci</h2>
 
-  <form action="https://formsubmit.co/mlc.matrimoni@gmail.com" method="POST" class="contact-form">
-    <input type="hidden" name="_next" value="grazie.html">
+  <form action="https://formsubmit.co/mlc.matrimoni@gmail.com" method="POST" class="contact-form" id="contactForm">
     <input type="hidden" name="_captcha" value="false">
 
     <input type="text" name="name" placeholder="Nome e cognome" required>
-    <!-- telefono migliorato -->
     <input type="tel" name="phone" placeholder="Telefono (+39 123 456 7890)" pattern="\+39\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{4}" title="Formato: +39 123 456 7890">
     <input type="email" name="email" placeholder="Email" required>
     <textarea name="message" placeholder="Scrivi il tuo messaggio..." required></textarea>
     <button type="submit">Invia messaggio</button>
   </form>
+
+  <div id="successMessage" style="display:none;">
+    Il tuo messaggio è stato inviato correttamente! Grazie.
+  </div>
 
 </section>
 
@@ -341,6 +351,32 @@ const navMenu = document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('show');
+});
+
+// Form submission con messaggio inline
+const form = document.getElementById('contactForm');
+const successMessage = document.getElementById('successMessage');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault(); // blocca il comportamento normale del form
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => {
+    if(response.ok){
+      successMessage.style.display = 'block'; // mostra il messaggio
+      form.reset(); // svuota il form
+    } else {
+      alert('Si è verificato un errore. Riprova.');
+    }
+  })
+  .catch(() => {
+    alert('Si è verificato un errore di rete. Riprova.');
+  });
 });
 </script>
 

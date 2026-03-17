@@ -1,23 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="it">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Contatti – MLC</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="css/index.css">
-
 </head>
-
 <body class="contatti">
 
 <header>
-
 <img src="img/logo.png" class="logo">
 
 <nav>
@@ -26,49 +18,30 @@
 <a href="servizi.html">Servizi</a>
 <a href="contatti.html">Contatti</a>
 </nav>
-
 </header>
 
 <section class="section">
+  <h2>Contattaci</h2>
 
-<h1>Contatti</h1>
+  <form action="https://formsubmit.co/mlc.matrimoni@gmail.com" method="POST" class="contact-form" id="contactForm">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="name" placeholder="Nome e cognome" required>
+    <input type="tel" name="phone" placeholder="Telefono (+39 123 456 7890)" pattern="\+39\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{4}" title="Formato: +39 123 456 7890">
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Scrivi il tuo messaggio..." required></textarea>
+    <button type="submit">Invia messaggio</button>
+  </form>
 
-<p>
-Per informazioni sui servizi o per organizzare il tuo matrimonio,
-contattaci direttamente.
-</p>
-
-<div class="contact-box">
-
-<p><strong>Email</strong><br>info@mlc-matrimoni.it</p>
-
-<p><strong>Telefono</strong><br>+39 XXX XXX XXXX</p>
-
-</div>
-
-<form action="https://formsubmit.co/info@mlc-matrimoni.it" method="POST" class="contact-form">
-
-<input type="text" name="name" placeholder="Nome e cognome" required>
-
-<input type="email" name="email" placeholder="Email" required>
-
-<input type="tel" name="phone" placeholder="Telefono">
-
-<textarea name="message" placeholder="Scrivi il tuo messaggio..." required></textarea>
-
-<button type="submit">Invia messaggio</button>
-
-</form>
-
+  <div id="successMessage">
+    Il tuo messaggio è stato inviato correttamente! Grazie.
+  </div>
 </section>
 
 <footer>
-
 <p>© 2026 MLC – Matrimoni Low Cost</p>
-
 </footer>
 
-<script src="js/index.js"></script>
-
+<script src="js/forms.js" defer></script>
+<script src="js/contatti.js" defer></script>
 </body>
 </html>

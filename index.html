@@ -7,232 +7,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<style>
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:#f6f1ea;
-  color:#2f2f2f;
-}
-
-/* HEADER */
-header{
-  background:white;
-  padding:20px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 4px 10px rgba(0,0,0,0.06);
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-.logo{
-  height:55px;
-}
-
-nav{
-  display:flex;
-  align-items:center;
-  gap:25px;
-}
-
-nav a{
-  text-decoration:none;
-  color:#555;
-  font-weight:500;
-}
-
-nav a:hover{
-  color:#b89663;
-}
-
-/* Hamburger Menu */
-.hamburger{
-  display:none;
-  flex-direction:column;
-  cursor:pointer;
-  gap:5px;
-}
-
-.hamburger div{
-  width:25px;
-  height:3px;
-  background:#555;
-  transition:0.3s;
-}
-
-/* HERO */
-.hero{
-  height:70vh;
-  background:url("https://images.unsplash.com/photo-1519741497674-611481863552") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  position:relative;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.35);
-}
-
-.hero-content{
-  position:relative;
-  color:white;
-  max-width:700px;
-  padding:20px;
-}
-
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:48px;
-  margin-bottom:20px;
-}
-
-.hero p{
-  font-size:20px;
-  margin-bottom:30px;
-}
-
-.btn{
-  background:#b89663;
-  color:white;
-  padding:14px 28px;
-  border-radius:40px;
-  text-decoration:none;
-  font-weight:600;
-}
-
-/* SECTIONS */
-.section{
-  max-width:1100px;
-  margin:80px auto;
-  padding:0 30px;
-}
-
-.section h2{
-  font-family:'Playfair Display',serif;
-  text-align:center;
-  color:#b89663;
-  margin-bottom:40px;
-}
-
-/* FEATURES */
-.features{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:30px;
-}
-
-.feature{
-  flex:1 1 260px;
-  max-width:320px;
-  background:white;
-  padding:30px;
-  border-radius:14px;
-  text-align:center;
-  box-shadow:0 10px 28px rgba(0,0,0,0.08);
-}
-
-/* SERVICES */
-.services{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:30px;
-}
-
-.service{
-  flex:1 1 260px;
-  max-width:320px;
-  background:#faf7f2;
-  padding:25px;
-  border-radius:12px;
-  text-align:center;
-}
-
-/* FORM */
-.contact-form{
-  max-width:600px;
-  margin:40px auto 0;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.contact-form input,
-.contact-form textarea{
-  padding:14px;
-  border-radius:8px;
-  border:1px solid #ddd;
-  font-family:'Inter',sans-serif;
-  font-size:15px;
-}
-
-.contact-form textarea{
-  min-height:120px;
-  resize:vertical;
-}
-
-.contact-form button{
-  background:#b89663;
-  color:white;
-  border:none;
-  padding:14px;
-  border-radius:40px;
-  font-weight:600;
-  cursor:pointer;
-}
-
-.contact-form button:hover{
-  background:#9f7d4f;
-}
-
-/* Success message */
-#successMessage{
-  text-align:center;
-  color:#b89663;
-  margin-top:20px;
-  font-weight:600;
-}
-
-/* FOOTER */
-footer{
-  background:#2f2f2f;
-  color:white;
-  text-align:center;
-  padding:30px;
-  margin-top:80px;
-}
-
-/* MOBILE */
-@media (max-width:768px){
-  nav{
-    position:fixed;
-    top:0;
-    right:-100%;
-    flex-direction:column;
-    width:200px;
-    height:100%;
-    background:white;
-    padding:60px 20px;
-    transition:0.3s;
-    box-shadow:-2px 0 10px rgba(0,0,0,0.1);
-  }
-  nav.show{
-    right:0;
-  }
-  .hamburger{
-    display:flex;
-  }
-}
-</style>
+<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
@@ -310,75 +85,42 @@ footer{
     <button type="submit">Invia messaggio</button>
   </form>
 
-  <div id="successMessage" style="display:none;">
+  <div id="successMessage">
     Il tuo messaggio è stato inviato correttamente! Grazie.
   </div>
 
 </section>
 
 <footer>
-  <div style="max-width:1100px;margin:0 auto;padding:30px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;color:white;font-family:'Inter',sans-serif;">
-    <div style="flex:1 1 250px;">
-      <h3 style="color:#b89663;margin-bottom:10px;">Contatti</h3>
-      <p>Email: <a href="mailto:mlc.matrimoni@gmail.com" style="color:white;text-decoration:underline;">mlc.matrimoni@gmail.com</a></p>
-      <p>Telefono: <a href="tel:+390123456789" style="color:white;text-decoration:underline;">+39 012 345 6789</a></p>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3 class="footer-h3">Contatti</h3>
+      <p>Email: <a href="mailto:mlc.matrimoni@gmail.com" class="footer-link underline">mlc.matrimoni@gmail.com</a></p>
+      <p>Telefono: <a href="tel:+390123456789" class="footer-link underline">+39 012 345 6789</a></p>
       <p>Indirizzo: Via Esempio 123, Roma, Italia</p>
     </div>
-    <div style="flex:1 1 200px;">
-      <h3 style="color:#b89663;margin-bottom:10px;">Link utili</h3>
-      <ul style="list-style:none;padding:0;margin:0;">
-        <li><a href="index.html" style="color:white;text-decoration:none;">Home</a></li>
-        <li><a href="chi-siamo.html" style="color:white;text-decoration:none;">Chi siamo</a></li>
-        <li><a href="servizi.html" style="color:white;text-decoration:none;">Servizi</a></li>
-        <li><a href="contatti.html" style="color:white;text-decoration:none;">Contatti</a></li>
+    <div class="footer-col">
+      <h3 class="footer-h3">Link utili</h3>
+      <ul class="footer-links-list">
+        <li><a href="index.html" class="footer-link">Home</a></li>
+        <li><a href="chi-siamo.html" class="footer-link">Chi siamo</a></li>
+        <li><a href="servizi.html" class="footer-link">Servizi</a></li>
+        <li><a href="contatti.html" class="footer-link">Contatti</a></li>
       </ul>
     </div>
-    <div style="flex:1 1 200px;">
-      <h3 style="color:#b89663;margin-bottom:10px;">Seguici</h3>
-      <a href="#" style="color:white;text-decoration:none;margin-right:10px;">Facebook</a>
-      <a href="#" style="color:white;text-decoration:none;margin-right:10px;">Instagram</a>
-      <a href="#" style="color:white;text-decoration:none;">Pinterest</a>
+    <div class="footer-col">
+      <h3 class="footer-h3">Seguici</h3>
+      <a href="#" class="social-link footer-link">Facebook</a>
+      <a href="#" class="social-link footer-link">Instagram</a>
+      <a href="#" class="footer-link">Pinterest</a>
     </div>
   </div>
-  <div style="text-align:center;padding-top:20px;color:#ccc;font-size:14px;">
+  <div class="footer-copy">
     © 2026 MLC – Matrimoni Low Cost. Tutti i diritti riservati.
   </div>
 </footer>
 
-<script>
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-
-hamburger.addEventListener('click', () => {
-  navMenu.classList.toggle('show');
-});
-
-// Form submission con messaggio inline
-const form = document.getElementById('contactForm');
-const successMessage = document.getElementById('successMessage');
-
-form.addEventListener('submit', function(e){
-  e.preventDefault(); // blocca il comportamento normale del form
-  const formData = new FormData(form);
-
-  fetch(form.action, {
-    method: 'POST',
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(response => {
-    if(response.ok){
-      successMessage.style.display = 'block'; // mostra il messaggio
-      form.reset(); // svuota il form
-    } else {
-      alert('Si è verificato un errore. Riprova.');
-    }
-  })
-  .catch(() => {
-    alert('Si è verificato un errore di rete. Riprova.');
-  });
-});
-</script>
+<script src="js/index.js"></script>
 
 </body>
 </html>

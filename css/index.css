@@ -118,12 +118,6 @@ body.grazie .grazie-viewport a{
 	font-weight:600;
 }
 
-body.grazie .grazie-viewport a:hover{
-	background:#9f7d4f;
-}
-
-
-
 /* Styles from contatti.html (scoped) */
 body.contatti .section{
 	max-width:900px;
@@ -187,10 +181,6 @@ body.contatti .contact-form button{
 	border-radius:40px;
 	font-weight:600;
 	cursor:pointer;
-}
-
-body.contatti .contact-form button:hover{
-	background:#9f7d4f;
 }
 
 /* FOOTER (kept for page safety) */
@@ -344,10 +334,6 @@ body.servizi .download-btn{
 	text-decoration:none;
 	font-weight:600;
 	text-align:center;
-}
-
-body.servizi .download-btn:hover{
-	background:#9f7d4f;
 }
 
 @media(max-width:768px){
@@ -543,10 +529,6 @@ nav a:hover{
 	cursor:pointer;
 }
 
-.contact-form button:hover{
-	background:#9f7d4f;
-}
-
 /* Success message */
 #successMessage{
 	text-align:center;
@@ -602,7 +584,7 @@ footer{
 		background:white;
 		padding:60px 20px;
 		transition:0.3s;
-		box-shadow:-2px 0 10px rgba(0,0,0,0.1);
+		box-shadow:-2px 0 10px rgba(0, 0, 0, 0.753);
 		z-index:999;
 	}
 
@@ -629,7 +611,7 @@ footer{
 
 	/* Colore elegante quando attivo */
 	.hamburger.active div{
-		background:#b89663;
+		background:rgba(0, 0, 0, 0.753);
 	}
 
 	.hamburger{
@@ -638,3 +620,87 @@ footer{
 }
 }
 
+/* ===== BOTTONI ANIMATI ===== */
+
+.text-box {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn,
+body.servizi .download-btn,
+.contact-form button,
+body.contatti .contact-form button,
+body.grazie .grazie-viewport a {
+  position: relative; /* fix per non rompere layout */
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+/* effetto hover */
+.btn:hover,
+body.servizi .download-btn:hover,
+.contact-form button:hover,
+body.contatti .contact-form button:hover,
+body.grazie .grazie-viewport a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn:active,
+body.servizi .download-btn:active,
+.contact-form button:active,
+body.contatti .contact-form button:active,
+body.grazie .grazie-viewport a:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* effetto espansione */
+.btn::after,
+body.servizi .download-btn::after,
+.contact-form button::after,
+body.contatti .contact-form button::after,
+body.grazie .grazie-viewport a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 40px;
+  z-index: -1;
+  transition: all .4s;
+  background-color: #b89663;
+}
+
+.btn:hover::after,
+body.servizi .download-btn:hover::after,
+.contact-form button:hover::after,
+body.contatti .contact-form button:hover::after,
+body.grazie .grazie-viewport a:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+/* animazione ingresso */
+.btn-animated,
+body.servizi .download-btn,
+.contact-form button,
+body.contatti .contact-form button,
+body.grazie .grazie-viewport a {
+  animation: moveInBottom 0.8s ease-out;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

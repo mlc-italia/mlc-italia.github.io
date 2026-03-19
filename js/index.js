@@ -4,8 +4,9 @@ const navMenu = document.getElementById('nav-menu');
 
 if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-    });
+    navMenu.classList.toggle('show');
+    hamburger.classList.toggle('active');
+	});
 }
 
 // NOTA: la gestione del form è ora in forms.js

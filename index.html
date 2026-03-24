@@ -81,9 +81,13 @@
   <form action="https://formsubmit.co/mlc.matrimoni@gmail.com" method="POST" class="contact-form" id="contactForm">
     <input type="hidden" name="_captcha" value="false">
     <input type="text" name="name" placeholder="Nome e cognome" required>
-    <input type="tel" name="phone" placeholder="Telefono (+39 123 456 7890)" pattern="\+39\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{4}" title="Formato: +39 123 456 7890">
+    <input type="tel" name="phone" placeholder="Telefono (facoltativo)">
     <input type="email" name="email" placeholder="Email" required>
     <textarea name="message" placeholder="Scrivi il tuo messaggio..." required></textarea>
+    <label>
+      <input type="checkbox" name="privacy" required>
+      Ho letto e accetto la <a href="/privacy.html" target="_blank">Privacy Policy</a>
+    </label>
     <button type="submit">Invia messaggio</button>
   </form>
 
@@ -106,6 +110,7 @@
         <li><a href="chi-siamo.html" class="footer-link">Chi siamo</a></li>
         <li><a href="servizi.html" class="footer-link">Servizi</a></li>
         <li><a href="contatti.html" class="footer-link">Contatti</a></li>
+        <li><a href="/privacy.html" class="footer-link">Privacy Policy</a></li>
       </ul>
     </div>
   </div>
@@ -113,6 +118,44 @@
     © 2026 MLC – Matrimoni Low Cost. Tutti i diritti riservati.
   </div>
 </footer>
+
+<div id="privacy-banner" style="
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #222;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
+">
+  Questo sito utilizza dati per migliorare l'esperienza.
+  Leggi la <a href="privacy.html" style="color: #00c3ff;">Privacy Policy</a>.
+
+  <button onclick="acceptPrivacy()" style="
+    margin-left: 15px;
+    padding: 8px 15px;
+    background: #00c3ff;
+    border: none;
+    cursor: pointer;
+  ">
+    Accetta
+  </button>
+</div>
+
+<script>
+function acceptPrivacy() {
+  localStorage.setItem("privacyAccepted", "true");
+  document.getElementById("privacy-banner").style.display = "none";
+}
+
+if (localStorage.getItem("privacyAccepted") === "true") {
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("privacy-banner").style.display = "none";
+  });
+}
+</script>
 
 <script src="js/forms.js" defer></script>
 <script src="js/index.js" defer></script>

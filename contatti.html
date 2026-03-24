@@ -34,9 +34,13 @@
   <form action="https://formsubmit.co/mlc.matrimoni@gmail.com" method="POST" class="contact-form" id="contactForm">
     <input type="hidden" name="_captcha" value="false">
     <input type="text" name="name" placeholder="Nome e cognome" required>
-    <input type="tel" name="phone" placeholder="Telefono (+39 123 456 7890)" pattern="\+39\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{4}" title="Formato: +39 123 456 7890">
+    <input type="tel" name="phone" placeholder="Telefono (facoltativo)">
     <input type="email" name="email" placeholder="Email" required>
     <textarea name="message" placeholder="Scrivi il tuo messaggio..." required></textarea>
+    <label>
+      <input type="checkbox" name="privacy" required>
+      Ho letto e accetto la <a href="/privacy.html" target="_blank">Privacy Policy</a>
+    </label>
     <button type="submit">Invia messaggio</button>
   </form>
 
@@ -59,6 +63,7 @@
         <li><a href="chi-siamo.html" class="footer-link">Chi siamo</a></li>
         <li><a href="servizi.html" class="footer-link">Servizi</a></li>
         <li><a href="contatti.html" class="footer-link">Contatti</a></li>
+        <li><a href="/privacy.html" class="footer-link">Privacy Policy</a></li>
       </ul>
     </div>
   </div>

@@ -21,7 +21,7 @@ z-index:10;
 }
 
 .logo{
-height:105px;
+height:55px;
 }
 
 nav a{
@@ -368,7 +368,7 @@ header{
 }
 
 .logo{
-	height:80px;
+	height:55px;
 }
 
 nav{
@@ -569,7 +569,7 @@ footer{
 }
 
 .footer-logo{
-	height:276px;
+	height:120px;
 	width:auto;
 	display:block;
 }
@@ -665,7 +665,7 @@ footer{
 	}
 
 	.footer-logo{
-		height:156px;
+		height:84px;
 	}
 
 	.footer-col{

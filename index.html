@@ -148,16 +148,18 @@
 </div>
 
 <script>
+const privacyConsentKey = "privacyAccepted_v2";
+
 function acceptPrivacy() {
-  localStorage.setItem("privacyAccepted", "true");
+  localStorage.setItem(privacyConsentKey, "true");
   document.getElementById("privacy-banner").style.display = "none";
 }
 
-if (localStorage.getItem("privacyAccepted") === "true") {
-  document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
+  if (localStorage.getItem(privacyConsentKey) === "true") {
     document.getElementById("privacy-banner").style.display = "none";
-  });
-}
+  }
+});
 </script>
 
 <script src="js/forms.js" defer></script>

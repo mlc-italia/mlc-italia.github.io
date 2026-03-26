@@ -569,7 +569,7 @@ footer{
 }
 
 .footer-logo{
-	height:120px;
+	height:clamp(56px, 9vw, 88px);
 	width:auto;
 	display:block;
 }
@@ -662,10 +662,6 @@ footer{
 
 	.footer-brand{
 		flex:1 1 100%;
-	}
-
-	.footer-logo{
-		height:84px;
 	}
 
 	.footer-col{

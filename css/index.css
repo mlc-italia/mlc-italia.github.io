@@ -21,7 +21,7 @@ z-index:10;
 }
 
 .logo{
-height:55px;
+height:105px;
 }
 
 nav a{
@@ -368,7 +368,7 @@ header{
 }
 
 .logo{
-	height:55px;
+	height:80px;
 }
 
 nav{
@@ -554,10 +554,24 @@ footer{
 	display:flex;
 	flex-wrap:wrap;
 	justify-content:center;
-	align-items:flex-start;
+	align-items:center;
 	gap:48px;
 	color:white;
 	font-family:'Inter',sans-serif;
+}
+
+.footer-brand{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex:0 0 auto;
+	text-decoration:none;
+}
+
+.footer-logo{
+	height:276px;
+	width:auto;
+	display:block;
 }
 
 .footer-col{
@@ -644,6 +658,14 @@ footer{
 		padding:20px 24px 10px;
 		gap:28px;
 		text-align:center;
+	}
+
+	.footer-brand{
+		flex:1 1 100%;
+	}
+
+	.footer-logo{
+		height:156px;
 	}
 
 	.footer-col{

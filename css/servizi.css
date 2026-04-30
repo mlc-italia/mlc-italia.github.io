@@ -26,8 +26,13 @@ header{
 	height:55px;
 }
 
+nav{
+	display:flex;
+	align-items:center;
+	gap:25px;
+}
+
 nav a{
-	margin-left:25px;
 	text-decoration:none;
 	color:#555;
 	font-weight:500;
@@ -35,6 +40,20 @@ nav a{
 
 nav a:hover{
 	color:#b89663;
+}
+
+.hamburger{
+	display:none;
+	flex-direction:column;
+	cursor:pointer;
+	gap:5px;
+}
+
+.hamburger div{
+	width:25px;
+	height:3px;
+	background:#555;
+	transition:0.3s;
 }
 
 /* =========================
@@ -390,6 +409,46 @@ footer{
 
 @media (max-width:768px){
 
+	nav{
+		position:fixed;
+		top:0;
+		right:-100%;
+		flex-direction:column;
+		width:200px;
+		height:100%;
+		background:white;
+		padding:60px 20px;
+		transition:0.3s;
+		box-shadow:-2px 0 10px rgba(0, 0, 0, 0.753);
+		z-index:999;
+	}
+
+	nav.show{
+		right:0;
+	}
+
+	.hamburger{
+		display:flex;
+		position:relative;
+		z-index:1000;
+	}
+
+	.hamburger.active div:nth-child(1){
+		transform:rotate(45deg) translate(5px, 5px);
+	}
+
+	.hamburger.active div:nth-child(2){
+		opacity:0;
+	}
+
+	.hamburger.active div:nth-child(3){
+		transform:rotate(-45deg) translate(6px, -6px);
+	}
+
+	.hamburger.active div{
+		background:rgba(0, 0, 0, 0.753);
+	}
+
 	.pacchetti-verticali{
 		grid-template-columns:1fr;
 	}
@@ -400,5 +459,22 @@ footer{
 
 	.card-v{
 		min-height:auto;
+	}
+
+	.footer-inner{
+		grid-template-columns:1fr;
+		gap:28px;
+		text-align:center;
+	}
+
+	.footer-col{
+		width:100%;
+		align-items:center;
+		text-align:center;
+	}
+
+	.footer-inner > .footer-col:last-child{
+		align-items:center;
+		text-align:center;
 	}
 }

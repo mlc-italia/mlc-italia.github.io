@@ -1,48 +1,404 @@
-/* MOBILE */
+body{
+	margin:0;
+	font-family:'Inter',sans-serif;
+	background:#f6f1ea;
+	color:#2f2f2f;
+	line-height:1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+	background:white;
+	padding:20px 30px;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	box-shadow:0 4px 10px rgba(0,0,0,0.06);
+	position:sticky;
+	top:0;
+	z-index:10;
+}
+
+.logo{
+	height:55px;
+}
+
+nav a{
+	margin-left:25px;
+	text-decoration:none;
+	color:#555;
+	font-weight:500;
+}
+
+nav a:hover{
+	color:#b89663;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero-servizi {
+	text-align:center;
+	padding:100px 20px 40px;
+}
+
+.hero-servizi h1{
+	font-family:'Playfair Display',serif;
+	font-size:42px;
+	margin-bottom:10px;
+}
+
+.hero-servizi p{
+	font-size:16px;
+	opacity:0.7;
+}
+
+/* =========================
+   INTRO SEO
+========================= */
+
+.intro-servizi{
+	max-width:900px;
+	margin:0 auto 60px;
+	text-align:center;
+}
+
+.intro-servizi h2{
+	font-family:'Playfair Display',serif;
+	font-size:28px;
+	margin-bottom:20px;
+	color:#b89663;
+}
+
+.intro-servizi p{
+	font-size:15px;
+	line-height:1.7;
+	opacity:0.85;
+	margin-bottom:15px;
+}
+
+/* =========================
+   PACCHETTI
+========================= */
+
+.pacchetti-verticali{
+	display:grid;
+	grid-template-columns:repeat(3,1fr);
+	gap:30px;
+	margin:60px 0;
+}
+
+/* =========================
+   CARD BASE
+========================= */
+
+.card-v{
+	padding:40px 25px;
+	border-radius:20px;
+	min-height:540px;
+
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+
+	box-shadow:0 10px 30px rgba(0,0,0,0.08);
+	transition:0.3s ease;
+	position:relative;
+	backdrop-filter:blur(6px);
+}
+
+.card-v:hover{
+	transform:translateY(-10px);
+}
+
+/* =========================
+   COLORI
+========================= */
+
+/* SILVER */
+.silver{
+	background:linear-gradient(135deg,#ffffff,#f2f2f2,#e9e9e9);
+	border:1px solid rgba(0,0,0,0.08);
+	color:#2b2b2b;
+}
+
+/* GOLD */
+.gold{
+	background:linear-gradient(135deg,#fff6e6,#f2d9a6,#b89663);
+	overflow:hidden;
+	color:#2b2b2b;
+}
+
+/* shine gold */
+.gold::before{
+	content:"";
+	position:absolute;
+	top:-50%;
+	left:-50%;
+	width:200%;
+	height:200%;
+	background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+	transform:rotate(25deg);
+	animation:shine 6s infinite;
+}
+
+@keyframes shine{
+	0%{transform:translateX(-100%) rotate(25deg);}
+	50%{transform:translateX(100%) rotate(25deg);}
+	100%{transform:translateX(100%) rotate(25deg);}
+}
+
+/* DIAMOND */
+.diamond{
+	background:linear-gradient(135deg,#0f1f33,#1a2f4f,#2a4a7a);
+	color:white;
+	box-shadow:0 0 30px rgba(80,160,255,0.12);
+}
+
+.diamond:hover{
+	transform:scale(1.03);
+	box-shadow:0 0 45px rgba(80,160,255,0.2);
+}
+
+/* =========================
+   TESTI
+========================= */
+
+.card-v h2{
+	font-family:'Playfair Display',serif;
+	font-size:28px;
+	letter-spacing:0.5px;
+}
+
+.price{
+	font-size:36px;
+	font-weight:600;
+	margin:10px 0;
+}
+
+.price span{
+	font-size:14px;
+	opacity:0.7;
+}
+
+.subtitle{
+	font-size:14px;
+	margin-bottom:15px;
+	opacity:0.85;
+}
+
+/*BOX INFO PREZZI*/
+
+.info-box{
+	max-width:700px;
+	margin:40px auto 0;
+	padding:16px 22px;
+
+	background:linear-gradient(135deg,#616161,#fff6e6,#616161);
+	border:1px solid rgba(184,150,99,0.25);
+	border-radius:14px;
+
+	text-align:center;
+
+	box-shadow:0 8px 20px rgba(0,0,0,0.05);
+	backdrop-filter:blur(6px);
+}
+
+/* testo interno */
+.info-box p{
+	margin:0;
+	font-size:14px;
+	color:#555;
+	line-height:1.5;
+}
+
+/* =========================
+   LISTA
+========================= */
+
+.card-v ul{
+	list-style:none;
+	padding:0;
+	margin:20px 0;
+}
+
+.card-v ul li{
+	margin-bottom:10px;
+	font-size:14px;
+	padding-left:18px;
+	position:relative;
+}
+
+.card-v ul li::before{
+	content:"✓";
+	position:absolute;
+	left:0;
+	color:#b89663;
+	font-size:12px;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.badge{
+	position:absolute;
+	top:15px;
+	right:15px;
+	background:#b89663;
+	color:white;
+	padding:5px 10px;
+	font-size:12px;
+	border-radius:10px;
+	z-index:2;
+}
+
+/* =========================
+   CTA FINALE
+========================= */
+
+.cta-final{
+	text-align:center;
+	padding:80px 20px;
+}
+
+.btn-primary.big{
+	display:inline-block;
+	font-size:18px;
+	padding:16px 32px;
+	margin-top:20px;
+	background:#b89663;
+	color:white;
+	border-radius:10px;
+	text-decoration:none;
+	transition:0.3s ease;
+}
+
+.btn-primary.big:hover{
+	background:#a9834f;
+}
+
+footer{
+	background:#2f2f2f;
+	color:white;
+	text-align:center;
+	padding:40px 24px 28px;
+	margin-top:80px;
+}
+
+/* contenitore principale */
+.footer-inner{
+	max-width:1100px;
+	margin:0 auto;
+	padding:0 0 28px;
+
+	display:grid;
+	grid-template-columns:1fr 1.2fr 1fr;
+	gap:36px;
+
+	border-bottom:1px solid rgba(255,255,255,0.12);
+	align-items:start;
+}
+
+/* LOGO FIX (QUESTO era il problema) */
+.footer-logo{
+	height:70px;
+	width:auto;
+	display:block;
+	margin:0 auto;
+}
+
+/* colonne */
+.footer-col{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	text-align:center;
+}
+
+/* ultima colonna a destra come nel tuo sito */
+.footer-inner > .footer-col:last-child{
+	align-items:flex-end;
+	text-align:right;
+}
+
+/* titoli */
+.footer-h3{
+	color:#b89663;
+	margin-bottom:12px;
+	font-family:'Playfair Display',serif;
+}
+
+/* testi */
+.footer-col p{
+	margin:8px 0;
+	font-size:14px;
+	color:#d9d2c7;
+}
+
+/* link */
+.footer-link{
+	color:#f3ede4;
+	text-decoration:none;
+	font-size:14px;
+}
+
+.footer-link:hover{
+	color:white;
+}
+
+/* lista pagine */
+.footer-links-list{
+	list-style:none;
+	padding:0;
+	margin:0;
+	display:grid;
+	gap:10px;
+}
+
+/* parte bassa footer */
+.footer-meta{
+	max-width:1100px;
+	margin:0 auto;
+	padding-top:18px;
+
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	gap:10px;
+}
+
+.footer-legal{
+	display:flex;
+	gap:12px;
+	flex-wrap:wrap;
+	font-size:14px;
+	color:#d9d2c7;
+}
+
+.footer-copy{
+	font-size:13px;
+	color:#aaa;
+}
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width:768px){
 
-	nav{
-		position:fixed;
-		top:0;
-		right:-100%;
-		flex-direction:column;
-		width:200px;
-		height:100%;
-		background:white;
-		padding:60px 20px;
-		transition:0.3s;
-		box-shadow:-2px 0 10px rgba(0, 0, 0, 0.753);
-		z-index:999;
+	.pacchetti-verticali{
+		grid-template-columns:1fr;
 	}
 
-	nav.show{
-		right:0;
+	.hero-servizi h1{
+		font-size:30px;
 	}
 
-	.hamburger{
-		display:flex;
+	.card-v{
+		min-height:auto;
 	}
-
-	/* Animazione hamburger -> X */
-	.hamburger.active div:nth-child(1){
-		transform: rotate(45deg) translate(5px, 5px);
-	}
-
-	.hamburger.active div:nth-child(2){
-		opacity: 0;
-	}
-
-	.hamburger.active div:nth-child(3){
-		transform: rotate(-45deg) translate(6px, -6px);
-	}
-
-	/* Colore elegante quando attivo */
-	.hamburger.active div{
-		background:rgba(0, 0, 0, 0.753);
-	}
-
-    .hamburger{
-	position:relative;
-	z-index:1000;
-}
 }

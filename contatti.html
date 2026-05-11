@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contatti – MLC</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contatti – MLC</title>
+  <meta name="description" content="Contatta MLC per organizzare il tuo matrimonio in Friuli Venezia Giulia con pacchetti chiari, budget controllato e soluzioni eleganti.">
+
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/contatti.css">
 </head>
+
 <body class="contatti">
 
 <header>
@@ -28,32 +32,241 @@
   </nav>
 </header>
 
-<section class="section">
-  <h2>Contattaci</h2>
+<main>
 
-  <form action="https://formsubmit.co/mlc.matrimoni@gmail.com" method="POST" class="contact-form" id="contactForm">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="name" placeholder="Nome e cognome" required>
-    <input type="tel" name="phone" placeholder="Telefono (facoltativo)">
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="message" placeholder="Scrivi il tuo messaggio..." required></textarea>
-    <label>
-      <input type="checkbox" name="privacy" required>
-      Ho letto e accetto la <a href="/privacy.html" target="_blank">Privacy Policy</a>
-    </label>
-    <button type="submit">Invia messaggio</button>
-  </form>
+  <section class="contact-hero">
+    <div class="eyebrow">Iniziamo da voi</div>
+    <h1>Raccontateci il matrimonio che avete in mente.</h1>
+    <p>
+      Anche se avete solo un’idea iniziale, una data indicativa o un budget da capire,
+      vi aiutiamo a trasformare tutto in un progetto più chiaro, realistico e sereno.
+    </p>
+  </section>
 
-  <div id="successMessage">
-    Il tuo messaggio è stato inviato correttamente! Grazie.
-  </div>
-</section>
+  <section class="contact-section contact-intro">
+    <div class="intro-card">
+      <span class="section-kicker">Prima di scriverci</span>
+      <h2>Non serve avere già tutto deciso.</h2>
+      <p>
+        Il primo contatto serve proprio a mettere ordine: numero di invitati, zona desiderata,
+        budget indicativo, stile del matrimonio e servizi che vorreste includere.
+      </p>
+      <p>
+        Da qui possiamo capire quale percorso proporvi e quali soluzioni possono essere più adatte,
+        evitando preventivi confusi o scelte prese solo per impulso.
+      </p>
+    </div>
+
+    <div class="quick-points">
+      <div class="quick-point">
+        <strong>Data o periodo</strong>
+        <span>Anche indicativo.</span>
+      </div>
+
+      <div class="quick-point">
+        <strong>Zona desiderata</strong>
+        <span>Oggi Friuli Venezia Giulia, con l’obiettivo di espanderci in futuro.</span>
+      </div>
+
+      <div class="quick-point">
+        <strong>Numero invitati</strong>
+        <span>Soprattutto adulti.</span>
+      </div>
+
+      <div class="quick-point">
+        <strong>Budget</strong>
+        <span>Anche solo orientativo.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-layout">
+
+      <div class="contact-box form-box">
+        <span class="section-kicker">Richiesta informazioni</span>
+        <h2>Mandaci i primi dettagli</h2>
+        <p>
+          Più informazioni ci lasciate, più sarà semplice capire quali soluzioni proporvi:
+          pacchetti, fornitori, location, servizi e impostazione generale del matrimonio.
+        </p>
+
+        <form action="https://formsubmit.co/mlc.matrimoni@gmail.com" method="POST" class="contact-form">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Nuova richiesta dal sito MLC">
+          <input type="hidden" name="_next" value="https://mlc-italia.github.io/grazie.html">
+
+          <div class="form-block">
+            <h4>I vostri contatti</h4>
+
+            <div class="form-grid">
+              <input type="text" name="Nome e cognome" placeholder="Nome e cognome" required>
+              <input type="tel" name="Telefono" placeholder="Telefono" required>
+            </div>
+
+            <input type="email" name="Email" placeholder="Email" required>
+          </div>
+
+          <div class="form-block">
+            <h4>Prime informazioni sul matrimonio</h4>
+
+            <div class="form-grid">
+              <input type="text" name="Data matrimonio" placeholder="Data o periodo indicativo">
+              <input type="text" name="Zona desiderata" placeholder="Comune o zona in Friuli Venezia Giulia">
+            </div>
+
+            <div class="form-grid">
+              <input type="number" name="Numero invitati" placeholder="Numero indicativo invitati adulti">
+
+              <select name="Budget indicativo">
+                <option value="">Budget indicativo</option>
+                <option value="Da definire">Da definire</option>
+                <option value="Fino a 130 euro a persona">Fino a 130 € a persona</option>
+                <option value="130-155 euro a persona">130-155 € a persona</option>
+                <option value="155-185 euro a persona">155-185 € a persona</option>
+                <option value="Oltre 185 euro a persona">Oltre 185 € a persona</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-block">
+            <h4>Raccontateci la vostra idea</h4>
+
+            <textarea name="Messaggio" placeholder="Che tipo di matrimonio immaginate? Quali servizi vi interessano? Cosa vorreste evitare? Quali sono le vostre priorità?" required></textarea>
+          </div>
+
+          <label class="privacy-check">
+            <input type="checkbox" name="Privacy" required>
+            <span>Ho letto e accetto la <a href="/privacy.html" target="_blank">Privacy Policy</a></span>
+          </label>
+
+          <button type="submit">Invia richiesta</button>
+        </form>
+      </div>
+
+      <aside class="contact-box side-box">
+        <span class="section-kicker">Contatto veloce</span>
+        <h3>Preferisci WhatsApp?</h3>
+        <p>
+          Scrivici direttamente: è il modo più semplice per iniziare,
+          soprattutto se vuoi inviarci una prima idea, una data o il numero degli invitati.
+        </p>
+
+        <a class="whatsapp-btn" href="https://wa.me/393286627293?text=Ciao%20MLC%2C%20vorrei%20informazioni%20per%20organizzare%20il%20mio%20matrimonio%20in%20Friuli%20Venezia%20Giulia." target="_blank">
+          Scrivici su WhatsApp
+        </a>
+
+        <div class="contact-details">
+          <div>
+            <strong>Email</strong>
+            <a href="mailto:mlc.matrimoni@gmail.com">mlc.matrimoni@gmail.com</a>
+          </div>
+
+          <div>
+            <strong>Telefono</strong>
+            <a href="tel:+393286627293">+39 3286627293</a>
+          </div>
+
+          <div>
+            <strong>Zona</strong>
+            <span>Friuli Venezia Giulia, con future espansioni</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <section class="contact-section process-section">
+    <div class="section-heading center">
+      <span class="section-kicker">Dopo il primo messaggio</span>
+      <h2>Cosa succede dopo?</h2>
+      <p>
+        Il contatto non vi impegna: serve a capire se possiamo costruire una proposta utile,
+        chiara e coerente con il matrimonio che desiderate.
+      </p>
+    </div>
+
+    <div class="process-cards">
+      <div class="process-card">
+        <span class="process-number">01</span>
+        <h3>Analisi iniziale</h3>
+        <p>Leggiamo le informazioni ricevute e individuiamo esigenze, priorità e possibili criticità.</p>
+      </div>
+
+      <div class="process-card">
+        <span class="process-number">02</span>
+        <h3>Prima direzione</h3>
+        <p>Vi aiutiamo a capire quale formula può essere più adatta e quali servizi conviene valutare.</p>
+      </div>
+
+      <div class="process-card">
+        <span class="process-number">03</span>
+        <h3>Proposta su misura</h3>
+        <p>Costruiamo una base concreta, personalizzabile e coerente con budget, zona e numero di invitati.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="faq-box">
+      <div>
+        <span class="section-kicker">Domande frequenti</span>
+        <h2>Dubbi prima di scriverci?</h2>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Il primo contatto è gratuito?</summary>
+          <p>Sì, il primo confronto serve a capire esigenze, zona, numero di invitati e budget di riferimento.</p>
+        </details>
+
+        <details>
+          <summary>Devo sapere già la data esatta?</summary>
+          <p>No. Va bene anche un periodo indicativo: mese, stagione o anno previsto.</p>
+        </details>
+
+        <details>
+          <summary>I pacchetti sono modificabili?</summary>
+          <p>Sì. Le formule sono una base di partenza: possiamo togliere, aggiungere o adattare i servizi.</p>
+        </details>
+
+        <details>
+          <summary>Lavorate anche fuori regione?</summary>
+          <p>Oggi MLC lavora in Friuli Venezia Giulia. L’obiettivo è crescere e valutare in futuro nuove zone operative.</p>
+        </details>
+
+        <details>
+          <summary>Le location vengono indicate subito?</summary>
+          <p>Possiamo dare prime indicazioni generali; i dettagli operativi vengono definiti dopo l’incarico e in base alla disponibilità reale.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="final-contact">
+      <span class="section-kicker">Primo passo</span>
+      <h2>Partiamo da una cosa semplice: raccontateci cosa immaginate.</h2>
+      <p>
+        Anche poche informazioni possono bastare per iniziare a capire quale direzione prendere
+        e come costruire un matrimonio elegante, sostenibile e senza sorprese in Friuli Venezia Giulia.
+      </p>
+
+      <a class="final-btn" href="https://wa.me/393286627293?text=Ciao%20MLC%2C%20vorrei%20raccontarvi%20il%20mio%20matrimonio%20in%20Friuli%20Venezia%20Giulia." target="_blank">
+        Inizia da WhatsApp
+      </a>
+    </div>
+  </section>
+
+</main>
 
 <footer>
   <div class="footer-inner">
     <a href="index.html" class="footer-brand" aria-label="MLC Home">
       <img src="img/logo.svg" class="footer-logo" alt="MLC Logo">
     </a>
+
     <div class="footer-col">
       <h3 class="footer-h3">Pagine importanti</h3>
       <ul class="footer-links-list">
@@ -63,25 +276,28 @@
         <li><a href="contatti.html" class="footer-link">Contatti</a></li>
       </ul>
     </div>
+
     <div class="footer-col">
       <h3 class="footer-h3">Contatti</h3>
       <p>Email: <a href="mailto:mlc.matrimoni@gmail.com" class="footer-link underline">mlc.matrimoni@gmail.com</a></p>
       <p>Telefono: <a href="tel:+393286627293" class="footer-link underline">+39 3286627293</a></p>
     </div>
   </div>
+
   <div class="footer-meta">
-    <div class="footer-legal" aria-label="Link legali">
+    <div class="footer-legal">
       <a href="/privacy.html" class="footer-link">Privacy Policy</a>
-      <span class="footer-divider" aria-hidden="true">-</span>
+      <span class="footer-divider">-</span>
       <a href="/cookie-policy.html" class="footer-link">Cookie Policy</a>
     </div>
+
     <div class="footer-copy">
-    &copy; 2026 MLC – Matrimoni Low Cost. Tutti i diritti riservati.
+      &copy; 2026 MLC – Matrimoni Low Cost. Tutti i diritti riservati.
     </div>
   </div>
 </footer>
 
-<script src="js/forms.js" defer></script>
-<script src="js/contatti.js" defer></script>
+<script src="js/index.js" defer></script>
+
 </body>
 </html>

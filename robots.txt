@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mlc-italia.github.io/sitemap.xml

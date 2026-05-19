@@ -10,16 +10,22 @@
 .cookie-consent {
   position: fixed;
   left: 50%;
-  bottom: 28px;
+  bottom: 24px;
   transform: translateX(-50%);
   z-index: 9999;
+
   width: min(960px, calc(100% - 32px));
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+
   background:
     radial-gradient(circle at 94% 0%, rgba(199, 162, 74, 0.18), transparent 28%),
     linear-gradient(135deg, #fffdf8 0%, #f8f4ec 55%, #eef3ec 100%);
+
   border: 1px solid rgba(138, 111, 53, 0.26);
   border-radius: 30px;
   box-shadow: 0 26px 70px rgba(0, 0, 0, 0.22);
+
   padding: 30px;
   display: none;
 }
@@ -41,7 +47,7 @@
   font-size: clamp(28px, 4vw, 42px);
   line-height: 1.1;
   color: #263626;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
 }
 
 .cookie-consent p {
@@ -49,6 +55,7 @@
   line-height: 1.75;
   font-size: 16px;
   max-width: 720px;
+  margin: 0;
 }
 
 .cookie-badge {
@@ -65,7 +72,7 @@
 
 .cookie-options {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   margin: 24px 0;
 }
@@ -96,12 +103,16 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #263626;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .cookie-toggle input {
   width: 18px;
   height: 18px;
   accent-color: #8a6f35;
+  flex: 0 0 auto;
 }
 
 .cookie-toggle.disabled {
@@ -150,6 +161,7 @@
   margin-top: 18px;
   font-size: 14px;
   color: #4c5549;
+  line-height: 1.6;
 }
 
 .cookie-links a {
@@ -164,7 +176,7 @@
   bottom: 18px;
   z-index: 9997;
   border: 1px solid rgba(138, 111, 53, 0.22);
-  background: rgba(255, 253, 248, 0.92);
+  background: rgba(255, 253, 248, 0.94);
   color: #263626;
   border-radius: 999px;
   padding: 10px 15px;
@@ -174,28 +186,102 @@
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
-@media (max-width: 760px) {
-  .cookie-consent {
-    bottom: 14px;
-    padding: 22px;
-    border-radius: 24px;
-    max-height: calc(100vh - 28px);
-    overflow-y: auto;
-  }
+/* TABLET */
 
-  .cookie-consent-header {
-    flex-direction: column;
+@media (max-width: 900px) {
+  .cookie-consent {
+    width: min(720px, calc(100% - 28px));
+    padding: 26px;
   }
 
   .cookie-options {
     grid-template-columns: 1fr;
   }
 
-  .cookie-actions {
+  .cookie-consent-header {
     flex-direction: column;
+  }
+
+  .cookie-badge {
+    align-self: flex-start;
+  }
+}
+
+/* TELEFONO */
+
+@media (max-width: 560px) {
+  .cookie-consent-overlay {
+    background: rgba(20, 30, 20, 0.50);
+  }
+
+  .cookie-consent {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    transform: none;
+
+    width: auto;
+    max-height: calc(100dvh - 20px);
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .cookie-consent h2 {
+    font-size: 30px;
+  }
+
+  .cookie-consent p {
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+
+  .cookie-option {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .cookie-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .cookie-btn {
     width: 100%;
+    padding: 14px 18px;
+  }
+
+  .cookie-links {
+    text-align: center;
+    font-size: 13.5px;
+  }
+
+  .cookie-preferences-link {
+    left: 12px;
+    bottom: 12px;
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+}
+
+/* TELEFONI MOLTO PICCOLI */
+
+@media (max-width: 380px) {
+  .cookie-consent {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .cookie-consent h2 {
+    font-size: 27px;
+  }
+
+  .cookie-option strong {
+    font-size: 15px;
+  }
+
+  .cookie-option span,
+  .cookie-toggle {
+    font-size: 13.5px;
   }
 }

@@ -84,11 +84,15 @@
     function showBanner() {
       overlay.classList.add("show");
       banner.classList.add("show");
+      overlay.style.display = "block";
+      banner.style.display = "block";
     }
 
     function hideBanner() {
       overlay.classList.remove("show");
       banner.classList.remove("show");
+      overlay.style.display = "none";
+      banner.style.display = "none";
     }
 
     function saveSessionChoice(analytics, marketing) {
@@ -96,8 +100,8 @@
         SESSION_KEY,
         JSON.stringify({
           essential: true,
-          analytics,
-          marketing,
+          analytics: analytics,
+          marketing: marketing,
           savedAt: new Date().toISOString()
         })
       );
@@ -127,9 +131,15 @@
     });
 
     if (!sessionStorage.getItem(SESSION_KEY)) {
-      showBanner();
+      setTimeout(showBanner, 300);
+    } else {
+      hideBanner();
     }
   }
 
-  document.addEventListener("DOMContentLoaded", createBanner);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", createBanner);
+  } else {
+    createBanner();
+  }
 })();

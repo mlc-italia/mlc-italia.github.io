@@ -1,26 +1,9 @@
 (function () {
-  const STORAGE_KEY = "mlc_cookie_preferences_v1";
-
-  function getPreferences() {
-    try {
-      return JSON.parse(localStorage.getItem(STORAGE_KEY));
-    } catch {
-      return null;
-    }
-  }
-
-  function savePreferences(preferences) {
-    localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify({
-        ...preferences,
-        essential: true,
-        savedAt: new Date().toISOString()
-      })
-    );
-  }
+  const SESSION_KEY = "mlc_cookie_session_choice";
 
   function createBanner() {
+    if (document.getElementById("cookieConsent")) return;
+
     const overlay = document.createElement("div");
     overlay.className = "cookie-consent-overlay";
     overlay.id = "cookieConsentOverlay";
@@ -33,11 +16,11 @@
     banner.innerHTML = `
       <div class="cookie-consent-header">
         <div>
-          <h2>Gestisci i cookie</h2>
+          <h2>Privacy e Cookie</h2>
           <p>
             Utilizziamo cookie essenziali per il corretto funzionamento del sito.
             Puoi scegliere se autorizzare anche eventuali cookie analitici anonimi
-            e cookie non essenziali. Puoi modificare la scelta in qualsiasi momento.
+            e cookie non essenziali.
           </p>
         </div>
 
@@ -74,9 +57,9 @@
       </div>
 
       <div class="cookie-actions">
-        <button class="cookie-btn accept" id="acceptAllCookies">Accetta tutto</button>
-        <button class="cookie-btn reject" id="rejectCookies">Rifiuta non essenziali</button>
-        <button class="cookie-btn save" id="saveCookieChoices">Salva preferenze</button>
+        <button class="cookie-btn accept" id="acceptAllCookies" type="button">Accetta tutto</button>
+        <button class="cookie-btn reject" id="rejectCookies" type="button">Rifiuta non essenziali</button>
+        <button class="cookie-btn save" id="saveCookieChoices" type="button">Salva preferenze</button>
       </div>
 
       <div class="cookie-links">
@@ -95,74 +78,58 @@
     document.body.appendChild(banner);
     document.body.appendChild(reopen);
 
-    return { overlay, banner, reopen };
-  }
-
-  function showBanner(overlay, banner) {
-    overlay.classList.add("show");
-    banner.classList.add("show");
-  }
-
-  function hideBanner(overlay, banner) {
-    overlay.classList.remove("show");
-    banner.classList.remove("show");
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const { overlay, banner, reopen } = createBanner();
-
     const analyticsInput = document.getElementById("cookieAnalytics");
     const marketingInput = document.getElementById("cookieMarketing");
 
-    const existingPreferences = getPreferences();
+    function showBanner() {
+      overlay.classList.add("show");
+      banner.classList.add("show");
+    }
 
-    if (existingPreferences) {
-      analyticsInput.checked = !!existingPreferences.analytics;
-      marketingInput.checked = !!existingPreferences.marketing;
-    } else {
-      showBanner(overlay, banner);
+    function hideBanner() {
+      overlay.classList.remove("show");
+      banner.classList.remove("show");
+    }
+
+    function saveSessionChoice(analytics, marketing) {
+      sessionStorage.setItem(
+        SESSION_KEY,
+        JSON.stringify({
+          essential: true,
+          analytics,
+          marketing,
+          savedAt: new Date().toISOString()
+        })
+      );
     }
 
     document.getElementById("acceptAllCookies").addEventListener("click", function () {
-      savePreferences({
-        analytics: true,
-        marketing: true
-      });
-
       analyticsInput.checked = true;
       marketingInput.checked = true;
-      hideBanner(overlay, banner);
+      saveSessionChoice(true, true);
+      hideBanner();
     });
 
     document.getElementById("rejectCookies").addEventListener("click", function () {
-      savePreferences({
-        analytics: false,
-        marketing: false
-      });
-
       analyticsInput.checked = false;
       marketingInput.checked = false;
-      hideBanner(overlay, banner);
+      saveSessionChoice(false, false);
+      hideBanner();
     });
 
     document.getElementById("saveCookieChoices").addEventListener("click", function () {
-      savePreferences({
-        analytics: analyticsInput.checked,
-        marketing: marketingInput.checked
-      });
-
-      hideBanner(overlay, banner);
+      saveSessionChoice(analyticsInput.checked, marketingInput.checked);
+      hideBanner();
     });
 
     reopen.addEventListener("click", function () {
-      const preferences = getPreferences();
-
-      if (preferences) {
-        analyticsInput.checked = !!preferences.analytics;
-        marketingInput.checked = !!preferences.marketing;
-      }
-
-      showBanner(overlay, banner);
+      showBanner();
     });
-  });
+
+    if (!sessionStorage.getItem(SESSION_KEY)) {
+      showBanner();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", createBanner);
 })();
